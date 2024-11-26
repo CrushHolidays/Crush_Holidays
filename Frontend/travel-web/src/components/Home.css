@@ -1,0 +1,120 @@
+/* General styles for the home component */
+.home {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Carousel container */
+  .container__slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Slider items */
+  .slider__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+  }
+  
+  /* Active slide */
+  .slider__item-active-show {
+    display: block;
+    animation: fadeIn 0.5s;
+  }
+  
+  /* Button container */
+  .container__slider__links {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Navigation dots */
+  .container__slider__links-small {
+    width: 10px;
+    height: 10px;
+    background: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .container__slider__links-small-active {
+    background: white;
+  }
+  
+  /* Navigation buttons */
+  .slider__btn-next,
+  .slider__btn-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .slider__btn-next {
+    right: 10px;
+  }
+  
+  .slider__btn-prev {
+    left: 10px;
+  }
+  
+  /* Content inside slides */
+  .slide-content {
+    position: absolute;
+    bottom: 15rem;
+    left: 5rem;  /* Aligns the content to the left */
+    text-align: left;  /* Align text to the left */
+    color: white;
+    padding: 3rem;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+  
+  .btn {
+    background-color:#e9431e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .btn:hover {
+    background-color: #d81b60;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
