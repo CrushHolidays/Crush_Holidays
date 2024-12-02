@@ -4,8 +4,9 @@
     import Navbar from "./components/Navbar";
     import Home from "./components/Home";
     import About from "./components/About";
-    import Packages from "./components/Packages";
+    import HomePage from './components/HomePage';
     import Contact from "./components/Contact";
+    import Coorg from './components/pages/Coorg'
     
     function App() {
       return (
@@ -15,8 +16,9 @@
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/packages" element={<Packages />} />
+              <Route path="/HomePage" element={<HomePage />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/Coorg" element={<Coorg />} />
             </Routes>
           </div>
         </Router>
