@@ -6,6 +6,9 @@
     import About from "./components/About";
     import Packages from "./components/Packages";
     import Contact from "./components/Contact";
+import PackageList from "./PackageList";
+import PackageDetails from "./components/PackageDetails";
+
     
     function App() {
       return (
@@ -15,8 +18,10 @@
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/packages" element={<Packages />} />
+              <Route path="/packages" element={<PackageList/>} />
               <Route path="/contact" element={<Contact />} />
+              
+              <Route path="/packages/:id" element={<PackageDetails />} />
             </Routes>
           </div>
         </Router>
