@@ -10,9 +10,13 @@ app.use(
     })
 )
 //common middlewares
-app.use(express.json({limit:"1000kb"}))
+app.use(express.json())
 app.use(express.urlencoded({extended:true,limit:"1000kb"}))
 app.use(express.static("public"))
+app.use((err, req, res, next) => {
+    console.error("Global Error Handler:", err);
+    res.status(500).json({ message: "Unexpected server error" });
+});
 
 import healthcheckRouter from "./routes/healthcheck.routes.js"
 import userRouter from "./routes/user.routes.js"
