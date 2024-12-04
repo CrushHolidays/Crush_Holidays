@@ -5,7 +5,7 @@ const app=express()
 
 app.use(
     cors({
-        origin:process.env.CORS_ORIGIN,
+        origin:'*',
         credentials:true
     })
 )
@@ -19,10 +19,11 @@ import userRouter from "./routes/user.routes.js"
 import PackageRouter from "./routes/Packages.routes.js"
 import InquiryRouter from "./routes/inquiry.routes.js"
 import FeedbackRouter from "./routes/feedback.routes.js"
+import Iternaryroutes from "./routes/iterneraries.routes.js"
 app.use("/api/v1/Packages",PackageRouter)
 app.use("/api/v1/healthcheck",healthcheckRouter)
 app.use("/api/v1/user",userRouter)
 app.use("/api/v1/Inquiry",InquiryRouter)
 app.use("/api/v1/Feedback",FeedbackRouter)
-
+app.use("/api/v1/Iternaries",Iternaryroutes)
 export {app}

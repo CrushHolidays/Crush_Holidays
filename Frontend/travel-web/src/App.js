@@ -4,11 +4,13 @@
     import Navbar from "./components/Navbar";
     import Home from "./components/Home";
     import About from "./components/About";
-    import Packages from "./components/Packages";
+    import HomePage from './components/HomePage';
     import Contact from "./components/Contact";
 import PackageList from "./PackageList";
 import PackageDetails from "./components/PackageDetails";
 
+    import Coorg from './components/pages/Coorg'
+import Card from "./components/Card";
     
     function App() {
       return (
@@ -18,8 +20,9 @@ import PackageDetails from "./components/PackageDetails";
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/packages" element={<PackageList/>} />
-              <Route path="/contact" element={<Contact />} />
+              <Route path="/packages" element={<Card />} />
+              <Route path="/contact" element={<HomePage/>} />
+              <Route path="/Coorg" element={<PackageList />} />
               
               <Route path="/packages/:id" element={<PackageDetails />} />
             </Routes>
