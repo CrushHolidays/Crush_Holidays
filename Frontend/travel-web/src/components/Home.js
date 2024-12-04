@@ -6,7 +6,7 @@ function CustomCarousel({ children }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [slideDone, setSlideDone] = useState(true);
   const [timeID, setTimeID] = useState(null);
-
+  
   const slideNext = useCallback(() => {
     setActiveIndex((val) => (val >= children.length - 1 ? 0 : val + 1));
   }, [children.length]);
@@ -46,11 +46,14 @@ function CustomCarousel({ children }) {
   }, [slideDone, slideNext, timeID]);
 
   return (
+    
     <div
       className="container__slider"
       onMouseEnter={AutoPlayStop}
       onMouseLeave={AutoPlayStart}
     >
+      
+
       {children.map((item, index) => (
         <div
           key={index}
@@ -134,7 +137,17 @@ function Home() {
         ))}
       </CustomCarousel>
       <Form /> {/* Include the Form component */}
+      <div style={{ position: "fixed", bottom: "20px", right: "20px" }}>
+      <a href="https://wa.me/+918762680858?text=Hi%20there!%20I%27m%20interested%20in%20planning%20a%20trip%20with%20your%20service.%20Can%20you%20help%20me%20get%20started?" 
+   target="_blank" rel="noopener noreferrer">
+  
+
+        <img src="/whatsapp-icon.png" alt="WhatsApp" style={{ width: "50px", height: "50px" }} />
+        </a>
+</div>
+
     </div>
+    
   );
 }
 

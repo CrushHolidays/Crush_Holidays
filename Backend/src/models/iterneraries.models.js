@@ -1,19 +1,30 @@
-import mongoose, {Schema} from "mongoose";
-import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
-const IternerariesSchema=new Schema({
-    Package_name:{
-        type:Schema.Types.ObjectId,
-        ref:'Packages'
-    },
-    day_number:{
-        type:Number,
-        required:true
-    },
-    Highlights:{
-        type:String,
-        required:true
-    }
-})
+import mongoose, { Schema } from "mongoose";
 
-IternerariesSchema.plugin(mongooseAggregatePaginate);
-export default mongoose.model("Iterneraries",IternerariesSchema);
+const ItinerarySchema = new Schema({
+  packageName: {
+    type: Schema.Types.ObjectId,
+    ref: 'Packages',
+    required: true
+  },
+  dayNumber: {
+    type: Number,
+    required: true
+  },
+  highlights: {
+    type: String,
+    required: true
+  },
+  activities: [{
+    activityName: { type: String, required: true },
+    description: { type: String, required: true },
+    time: { type: String, required: true },
+    location: { type: String, required: true }
+  }],
+  locations: [{
+    name: { type: String, required: true },
+    address: { type: String, required: true },
+    description: { type: String, required: true }
+  }],
+});
+
+export const Itinerary = mongoose.model('Itinerary', ItinerarySchema);

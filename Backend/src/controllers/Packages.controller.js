@@ -44,7 +44,7 @@ const AddPackages = asyncHandler(async (req, res) => {
         Duration,
         Highlight,
         Discount: Discount || 0, // Default Discount to 0 if not provided
-        Image_url: JSON.stringify(imageUrls), // Store image URLs as a JSON array
+        Image_url: JSON.stringify(imageUrls) , // Store image URLs as an array
     });
 
     return res.status(201).json(
