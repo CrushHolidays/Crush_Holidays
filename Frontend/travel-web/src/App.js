@@ -20,10 +20,10 @@ import Card from "./components/Card";
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
-              <Route path="/packages" element={<Card />} />
+              <Route path="/packages" element={<PackageList/>} />
               <Route path="/contact" element={<HomePage/>} />
               <Route path="/Coorg" element={<PackageList />} />
-              
+              <Route path="/test" element={<HomePage/>} />
               <Route path="/packages/:id" element={<PackageDetails />} />
             </Routes>
           </div>
