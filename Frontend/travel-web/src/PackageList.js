@@ -3,23 +3,37 @@ import { useNavigate } from "react-router-dom";
 
 const PackageList = () => {
   const [packages, setPackages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:7000/api/v1/Packages/get-packages")
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch packages");
+        }
+        return response.json();
+      })
       .then((data) => {
         setPackages(data.data.packages);
+        setIsLoading(false);
       })
-      .catch((error) => console.error("Error fetching packages:", error));
+      .catch((error) => {
+        console.error("Error fetching packages:", error);
+        setIsLoading(false);
+      });
   }, []);
 
   const handleCardClick = (id) => {
     navigate(`/packages/${id}`);
   };
 
+  if (isLoading) {
+    return <div>Loading packages...</div>;
+  }
+
   return (
-    <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", padding: "20px" }}>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "20px", padding: "20px", justifyContent: "center" }}>
       {packages.map((pkg) => (
         <div
           key={pkg._id}
@@ -31,10 +45,11 @@ const PackageList = () => {
             cursor: "pointer",
             padding: "10px",
             textAlign: "center",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
           }}
         >
           <img
-            src={JSON.parse(pkg.Image_url[0])[0]}
+            src={pkg.Image_url?.[0] ? JSON.parse(pkg.Image_url[0])[0] : "path/to/default/image.jpg"}
             alt={pkg.Package_name}
             style={{ width: "100%", height: "150px", objectFit: "cover", borderRadius: "8px" }}
           />

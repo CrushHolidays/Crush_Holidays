@@ -1,14 +1,23 @@
 import React from "react";
+import './About.css'
 
 function About() {
   return (
-    <div className="about">
-      <h1>About Us</h1>
-      <p>
-        India Travel is your one-stop destination to explore the beauty, culture,
-        and festivals of India.
-      </p>
-    </div>
+
+        <div className="container">
+          <div className="text-section">
+            <h1>Bigger Group? Get special offers up to 50% Off!</h1>
+            <p>We create unforgettable adventures, customized for your group.</p>
+            <button className="callback-button">
+              <span role="img" aria-label="phone">📞</span> Get a Callback
+            </button>
+          </div>
+          <div className="image-section">
+            <img src="https://via.placeholder.com/400" alt="Group jumping at sunset" />
+          </div>
+        </div>
+   
+    
   );
 }
 
