@@ -13,7 +13,7 @@ function About() {
             </button>
           </div>
           <div className="image-section">
-            <img src="https://via.placeholder.com/400" alt="Group jumping at sunset" />
+            <img src="https://www.puredestinations.co.uk/wp-content/uploads/2019/10/where-to-go-on-holiday-in-october-luxury-holiday-packages--1600x700.jpg" alt="Group jumping at sunset" />
           </div>
         </div>
    

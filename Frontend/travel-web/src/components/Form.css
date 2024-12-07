@@ -3,7 +3,7 @@ body {
 }
 
 .quote-form {
-    position: fixed;
+    position:absolute;
     top: 50%;
     right: 5rem;
     transform: translateY(-50%);

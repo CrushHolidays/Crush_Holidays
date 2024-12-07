@@ -9,6 +9,8 @@ import PackageList from "./PackageList";
 import PackageDetails from "./components/PackageDetails";
 import MarqueeDemo from "./components/MarqueeDemo";
 import "./App.css";
+import ReviewForm from "./components/ReviewForm";
+import HomePage from "./components/HomePage";
 
 function App() {
   return (
@@ -26,27 +28,32 @@ function App() {
                 <nav className="nav">
                   <ul>
                     <li>
-                      <Link to="home" smooth={true} duration={1000}>
+                      <Link to="home" smooth={true} duration={500}>
                         Home
                       </Link>
                     </li>
                     <li>
-                      <Link to="about" smooth={true} duration={1000}>
+                      <Link to="about" smooth={true} duration={500}>
                         About
                       </Link>
                     </li>
                     <li>
-                      <Link to="packages" smooth={true} duration={1000}>
+                      <Link to="packages" smooth={true} duration={500}>
                         Packages
                       </Link>
                     </li>
                     <li>
-                      <Link to="contact" smooth={true} duration={1000}>
+                      <Link to="contact" smooth={true} duration={500}>
                         Contact
                       </Link>
                     </li>
                     <li>
-                      <Link to="marquee-demo" smooth={true} duration={1000}>
+                      <Link to="feedback-form" smooth={true} duration={500}>
+                       Feedback
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="marquee-demo" smooth={true} duration={500}>
                         Marquee Demo
                       </Link>
                     </li>
@@ -62,17 +69,19 @@ function App() {
                   <About />
                 </Element>
                 <Element name="packages">
-                  <PackageList />
+                  <HomePage/>
+                </Element>
+                
+                <Element name="marquee-demo">
+                  <MarqueeDemo />
+                </Element>
+                <Element name="feedback-form">
+                  
+                  <ReviewForm/>
                 </Element>
                 <Element name="contact">
                   <Contact />
-                </Element>
-                <Element name="marquee-demo">
-                  <MarqueeDemo />
-                </Element>
-                <Element name="marquee-demo">
-                  <MarqueeDemo />
-                </Element>
+                  </Element>
               </>
             }
           />
