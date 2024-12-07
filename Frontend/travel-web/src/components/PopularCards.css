@@ -1,0 +1,28 @@
+.popular-card {
+    max-width: 300px;
+    margin: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popular-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .popular-card-content {
+    padding: 15px;
+  }
+  
+  .popular-card-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .popular-card-description {
+    color: #555;
+  }
+  

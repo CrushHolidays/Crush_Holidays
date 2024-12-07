@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./Home.css";
 import Form from './Form'; // Import the Form component
+import ReviewForm from "./ReviewForm";
 
 function CustomCarousel({ children }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -145,6 +146,10 @@ function Home() {
         <img src="/whatsapp-icon.png" alt="WhatsApp" style={{ width: "50px", height: "50px" }} />
         </a>
 </div>
+<div>
+<ReviewForm/>
+</div>
+
 
     </div>
     
