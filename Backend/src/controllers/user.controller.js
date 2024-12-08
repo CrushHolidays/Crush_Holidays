@@ -6,6 +6,7 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const userenquiry = asyncHandler(async (req, res) => {
+
   const { Name, Phone_no, email, city } = req.body;
 
   // Validate input
