@@ -11,6 +11,7 @@ import MarqueeDemo from "./components/MarqueeDemo";
 import "./App.css";
 import ReviewForm from "./components/ReviewForm";
 import HomePage from "./components/HomePage";
+import CardPage from "./components/HomePage";
 
 function App() {
   return (
@@ -69,7 +70,7 @@ function App() {
                   <About />
                 </Element>
                 <Element name="packages">
-                  <HomePage/>
+                 <CardPage/>
                 </Element>
                 
                 <Element name="marquee-demo">

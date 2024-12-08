@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './HomePage.css';
 
-const HomePage = () => {
+const CardPage = () => {
     const [packages, setPackages] = useState([]);
     const navigate = useNavigate();
 
@@ -42,4 +42,4 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;
+export default CardPage;

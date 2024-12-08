@@ -1,0 +1,12 @@
+{
+  "name": "main-project",
+  "version": "1.0.0",
+  "scripts": {
+    "start-backend": "npm run dev --prefix backend",
+    "start-frontend": "npm start --prefix Frontend/travel-web",
+    "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
