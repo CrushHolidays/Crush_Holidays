@@ -8,7 +8,7 @@ const PackageDetails = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:7000/api/v1/Iternaries/get/${id}`)
+    fetch(`https://crush-holidays-backend.onrender.com/api/v1/Iternaries/get/${id}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch package details");
