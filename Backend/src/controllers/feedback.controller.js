@@ -4,6 +4,7 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 
 const createFeedback = asyncHandler(async (req, res) => {
     const { Title, rating, content, user_name, email } = req.body;
+    console.log("it came till here");
 
     // Validate request body
     if (!Title || !rating || !content || !user_name || !email) {

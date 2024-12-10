@@ -7,7 +7,7 @@ const CardPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("https://crush-holidays-backend.onrender.com/api/v1/Packages/get-packages")
+        fetch("http://localhost:7000/api/v1/Packages/get-packages")
             .then((response) => response.json())
             .then((data) => {
                 setPackages(data.data.packages);
