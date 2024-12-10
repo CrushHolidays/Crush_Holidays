@@ -1,55 +1,132 @@
 .review-form {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
+  max-width: 600px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.review-form h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  font-size: 1.8em;
+  transition: color 0.3s ease;
+}
+
+.review-form h2:hover {
+  color: #4CAF50;
+}
+
+.review-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.review-form input, .review-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-form input:focus, .review-form textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(0, 128, 0, 0.2);
+  outline: none;
+}
+
+.review-form .star-rating {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-size: 2em;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.review-form .star-rating span:hover {
+  transform: scale(1.2);
+}
+
+.review-form button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review-form button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.review-form button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.review-form input[type="checkbox"] {
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.review-form input[type="checkbox"]:checked {
+  transform: scale(1.2);
+}
+
+.review-form .error-message {
+  color: #d9534f;
+  background-color: #f2dede;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ebccd1;
+  border-radius: 5px;
+  font-size: 1em;
+  text-align: center;
+  animation: errorAnimation 0.5s ease-in-out;
+}
+
+@keyframes errorAnimation {
+  0% {
+      transform: translateY(-10px);
+      opacity: 0;
   }
-  
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .review-form {
+      padding: 20px;
+  }
+
   .review-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
+      font-size: 1.5em;
   }
   
-  .review-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+  .review-form input, .review-form textarea, .review-form button {
+      font-size: 1em;
   }
-  
-  .review-form input, .review-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .review-form .star-rating {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-    font-size: 1.5em;
-    cursor: pointer;
-  }
-  
-  .review-form button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .review-form button:hover {
-    background-color: #45a049;
-  }
-  
-  .review-form input[type="checkbox"] {
-    margin-right: 10px;
-  }
-  
+}
