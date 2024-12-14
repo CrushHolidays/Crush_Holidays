@@ -3,7 +3,7 @@ import "./Home.css";
 import Form from './Form'; // Import the Form component
 import ReviewForm from "./ReviewForm";
 // Remove this Navbar import as well, since it's no longer needed in Home.js
-import Navbar from "./Navbar";
+
 
 function CustomCarousel({ children }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -120,7 +120,7 @@ function Home() {
 
   return (
     <div className="home">
-      <Navbar/>
+      
       <CustomCarousel>
         {slides.map((slide, index) => (
           <div

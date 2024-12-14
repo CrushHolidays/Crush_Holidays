@@ -43,7 +43,7 @@ const CardPage = () => {
                                 <span className="adventure-cost">
                                     Adventure Cost: <span className="original-price">₹{pkg.Price}</span>
                                 </span>
-                                <span className="discount-price">Discount: ₹{pkg.Discount}</span>
+                                <span className="discount-price">Discount: ₹{pkg.Price-pkg.Discount}</span>
                             </div>
                             <p className="packages">Duration: {pkg.Duration} days</p>
                             <p className="highlights">Highlight: {pkg.Highlight.replace(/\"/g, "")}</p>
