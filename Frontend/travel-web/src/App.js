@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { Link, Element } from "react-scroll";
-import Navbar from "./components/Navbar";
+import Navbar from "../src/components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <div>
-        {/* <Navbar /> */}
+        <Navbar/>
 
         {/* Define Routes */}
         <Routes>
@@ -26,40 +26,7 @@ function App() {
             path="/"
             element={
               <>
-                <nav className="nav">
-                  <ul>
-                    <li>
-                      <Link to="home" smooth={true} duration={500}>
-                        Home
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="about" smooth={true} duration={500}>
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="packages" smooth={true} duration={500}>
-                        Packages
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="contact" smooth={true} duration={500}>
-                        Contact
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="feedback-form" smooth={true} duration={500}>
-                       Feedback
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="marquee-demo" smooth={true} duration={500}>
-                        Marquee Demo
-                      </Link>
-                    </li>
-                  </ul>
-                </nav>
+                
                 
                 {/* Sections for In-Page Navigation */}
                 {/* <Navbar/> */}

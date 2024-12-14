@@ -36,5 +36,15 @@ const getallFeedback=asyncHandler(async(req,res)=>{
 
 })
 
+const getallspecificFeedback=asyncHandler(async(req,res)=>{
+    
+    const feedbacks = await Comment.find({ rating: { $gt: 3 } }).sort({ createdAt: -1 });
 
-export { createFeedback,getallFeedback };
+       
+        const response=ApiResponse.success("Feedbacks retrieved successfully",feedbacks);
+    return res.status(200).json(response);
+
+})
+
+
+export { createFeedback,getallFeedback,getallspecificFeedback};

@@ -12,7 +12,7 @@ const Card = ({ image, title, path, price, discount, packages, highlights, ratin
                 <h3>{title}</h3>
                 <p className="price">
                     <span className="original-price">₹{price}</span>
-                    <span className="discount-price">₹{discount}</span>
+                    <span className="discount-price">₹{price-discount}</span>
                 </p>
                 <p className="packages">Packages: {packages}</p>
                 <ul className="highlights">
