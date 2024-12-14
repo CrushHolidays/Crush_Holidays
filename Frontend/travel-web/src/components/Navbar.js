@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-scroll";
+import "./Navbar.css"; // Make sure to include your updated CSS file
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className="navbar">
+      <div className="logo">Travel India</div>
       <ul>
         <li><Link to="home" smooth={true} duration={1000}>Home</Link></li>
         <li><Link to="about" smooth={true} duration={1000}>About</Link></li>
@@ -15,7 +17,7 @@ const Navbar = () => {
       </ul>
     </nav>
   );
-}
+};
 
 export default Navbar;
 
