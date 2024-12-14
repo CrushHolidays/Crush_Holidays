@@ -10,14 +10,14 @@ import PackageDetails from "./components/PackageDetails";
 import MarqueeDemo from "./components/MarqueeDemo";
 import "./App.css";
 import ReviewForm from "./components/ReviewForm";
-import HomePage from "./components/HomePage";
+// import HomePage from "./components/HomePage";
 import CardPage from "./components/HomePage";
 
 function App() {
   return (
     <Router>
       <div>
-        <Navbar />
+        {/* <Navbar /> */}
 
         {/* Define Routes */}
         <Routes>
@@ -62,7 +62,7 @@ function App() {
                 </nav>
                 
                 {/* Sections for In-Page Navigation */}
-                <Navbar/>
+                {/* <Navbar/> */}
                 <Element name="home">
                   <Home />
                 </Element>
@@ -73,13 +73,13 @@ function App() {
                  <CardPage/>
                 </Element>
                 
-                <Element name="marquee-demo">
+                {/* <Element name="marquee-demo">
                   <MarqueeDemo />
-                </Element>
-                <Element name="feedback-form">
+                </Element> */}
+                {/* <Element name="feedback-form">
                   
                   <ReviewForm/>
-                </Element>
+                </Element> */}
                 <Element name="contact">
                   <Contact />
                   </Element>

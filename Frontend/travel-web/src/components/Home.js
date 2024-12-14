@@ -2,12 +2,14 @@ import React, { useState, useEffect, useCallback } from "react";
 import "./Home.css";
 import Form from './Form'; // Import the Form component
 import ReviewForm from "./ReviewForm";
+// Remove this Navbar import as well, since it's no longer needed in Home.js
+import Navbar from "./Navbar";
 
 function CustomCarousel({ children }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [slideDone, setSlideDone] = useState(true);
   const [timeID, setTimeID] = useState(null);
-  
+
   const slideNext = useCallback(() => {
     setActiveIndex((val) => (val >= children.length - 1 ? 0 : val + 1));
   }, [children.length]);
@@ -47,14 +49,11 @@ function CustomCarousel({ children }) {
   }, [slideDone, slideNext, timeID]);
 
   return (
-    
     <div
       className="container__slider"
       onMouseEnter={AutoPlayStop}
       onMouseLeave={AutoPlayStart}
     >
-      
-
       {children.map((item, index) => (
         <div
           key={index}
@@ -106,22 +105,22 @@ function Home() {
       description: "Immerse yourself in India's breathtaking landscapes.",
     },
     {
-        imgURL: "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1255/Large-Houseboat-of-Kerala.jpg",
-        imgAlt: "Slide 3",
-        title: "Unveil the Natural Beauty",
-        description: "Immerse yourself in India's breathtaking landscapes.",
-        
-      },
-      {
-        imgURL: "https://www.aanavandi.com/blog/wp-content/uploads/2019/08/ksrtc-munnar-Riyas-Paloli%E2%80%8E.jpg",
-        imgAlt: "Slide 3",
-        title: "Unveil the Natural Beauty",
-        description: "Immerse yourself in India's breathtaking landscapes.",
-      },
+      imgURL: "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1255/Large-Houseboat-of-Kerala.jpg",
+      imgAlt: "Slide 3",
+      title: "Unveil the Natural Beauty",
+      description: "Immerse yourself in India's breathtaking landscapes.",
+    },
+    {
+      imgURL: "https://www.aanavandi.com/blog/wp-content/uploads/2019/08/ksrtc-munnar-Riyas-Paloli%E2%80%8E.jpg",
+      imgAlt: "Slide 3",
+      title: "Unveil the Natural Beauty",
+      description: "Immerse yourself in India's breathtaking landscapes.",
+    },
   ];
 
   return (
     <div className="home">
+      <Navbar/>
       <CustomCarousel>
         {slides.map((slide, index) => (
           <div
@@ -132,31 +131,27 @@ function Home() {
             <div className="slide-content">
               <h1>{slide.title}</h1>
               <p>{slide.description}</p>
-              <button className="btn">Book Now</button>
             </div>
           </div>
         ))}
       </CustomCarousel>
       <Form /> {/* Include the Form component */}
       <div style={{ position: "fixed", bottom: "20px", right: "20px" }}>
-      <a href="https://wa.me/+918762680858?text=Hi%20there!%20I%27m%20interested%20in%20planning%20a%20trip%20with%20your%20service.%20Can%20you%20help%20me%20get%20started?" 
-   target="_blank" rel="noopener noreferrer">
-  
-
-        <img src="/whatsapp-icon.png" alt="WhatsApp" style={{ width: "50px", height: "50px" }} />
+        <a href="https://wa.me/+918762680858?text=Hi%20there!%20I%27m%20interested%20in%20planning%20a%20trip%20with%20your%20service.%20Can%20you%20help%20me%20get%20started?" 
+           target="_blank" rel="noopener noreferrer">
+          <img src="/whatsapp-icon.png" alt="WhatsApp" style={{ width: "50px", height: "50px" }} />
         </a>
-</div>
-<div>
-<ReviewForm/>
-</div>
-
-
+      </div>
+      <div>
+        {/* <ReviewForm/> */}
+      </div>
     </div>
-    
   );
 }
 
 export default Home;
+
+
 
 
 
