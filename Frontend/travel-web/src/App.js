@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { Link, Element } from "react-scroll";
-import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -12,13 +11,12 @@ import "./App.css";
 import ReviewForm from "./components/ReviewForm";
 // import HomePage from "./components/HomePage";
 import CardPage from "./components/HomePage";
+import PopularCards from "./components/PopularCards";
 
 function App() {
   return (
     <Router>
       <div>
-        {/* <Navbar /> */}
-
         {/* Define Routes */}
         <Routes>
           {/* Main Page with In-Page Navigation */}
@@ -26,7 +24,8 @@ function App() {
             path="/"
             element={
               <>
-                <nav className="nav">
+                {/* Remove the Navbar here */}
+                {/* <nav className="nav">
                   <ul>
                     <li>
                       <Link to="home" smooth={true} duration={500}>
@@ -50,7 +49,7 @@ function App() {
                     </li>
                     <li>
                       <Link to="feedback-form" smooth={true} duration={500}>
-                       Feedback
+                        Feedback
                       </Link>
                     </li>
                     <li>
@@ -59,10 +58,9 @@ function App() {
                       </Link>
                     </li>
                   </ul>
-                </nav>
+                </nav> */}
                 
                 {/* Sections for In-Page Navigation */}
-                {/* <Navbar/> */}
                 <Element name="home">
                   <Home />
                 </Element>
@@ -70,19 +68,21 @@ function App() {
                   <About />
                 </Element>
                 <Element name="packages">
-                 <CardPage/>
+                  <CardPage />
                 </Element>
-                
+
                 <Element name="marquee-demo">
                   <MarqueeDemo />
                 </Element>
-                {/* <Element name="feedback-form">
-                  
-                  <ReviewForm/>
-                </Element> */}
+                <Element name="feedback-form">
+                  <ReviewForm />
+                </Element>
+                <Element name="PopularCards">
+                  <PopularCards />
+                </Element>
                 <Element name="contact">
                   <Contact />
-                  </Element>
+                </Element>
               </>
             }
           />
@@ -96,3 +96,4 @@ function App() {
 }
 
 export default App;
+

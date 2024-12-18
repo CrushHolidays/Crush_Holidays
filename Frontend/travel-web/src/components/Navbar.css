@@ -1,42 +1,101 @@
 /* Navbar container */
 .navbar {
   position: fixed; /* Fixed position at the top */
-  top: 0; /* Ensures it's always at the top */
+  top: -100px; /* Initially positioned off-screen */
   left: 0;
   width: 100%; /* Full width */
-  z-index: 1000; /* High z-index to keep it on top of other content */
+  z-index: 1000; /* Ensure it's above other content */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space between logo and navbar links */
   align-items: center;
   padding: 10px 20px;
   background: rgba(15, 14, 14, 0.8); /* Semi-transparent black background */
   color: white;
-  /* box-shadow: 0 2px 4px rgba(50, 49, 49, 0.);  */
+  animation: slideDown 0.5s ease-out forwards; /* Slide-in animation */
+  transition: top 0.5s ease-out;
 }
 
 /* Logo styling */
 .navbar .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #e9431e;
+  color: #e9431e; /* Bright color for the logo */
+  text-transform: uppercase; /* Make logo letters uppercase */
+  letter-spacing: 1px; /* Add some space between letters */
+  font-family: 'Arial', sans-serif;
+  transition: color 0.3s ease; /* Smooth color transition */
 }
 
-/* Navbar links */
+/* Navbar links container */
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   margin: 0;
   padding: 0;
 }
 
+/* Navbar link styling */
+.navbar ul li {
+  position: relative;
+}
+
+/* Navbar link styling */
 .navbar ul li a {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  transition: color 0.3s ease; /* Smooth hover effect */
+  font-weight: 500; /* Make the font a little bolder */
+  transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease; /* Smooth hover effect */
+  padding: 5px 10px; /* Add padding for more click area */
+  border-radius: 5px; /* Rounded corners for the background hover effect */
 }
 
+/* Hover effect for links */
 .navbar ul li a:hover {
-  color: #e9431e; /* Highlight color on hover */
+  color: #fff; /* Keep text color white on hover */
+  background-color: #e9431e; /* Background color change on hover */
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  box-shadow: 0 4px 10px rgba(233, 67, 30, 0.5); /* Subtle shadow to make it stand out */
+}
+
+/* Hover effect for logo */
+.navbar .logo:hover {
+  color: #fff; /* Change logo color to white on hover */
+  transform: scale(1.1); /* Slight zoom effect for the logo */
+  text-shadow: 0 0 10px rgba(233, 67, 30, 0.8); /* Glowing effect on the logo */
+}
+
+/* Animation for sliding the navbar from top to bottom */
+@keyframes slideDown {
+  0% {
+    top: -100px; /* Start above the screen */
+  }
+  100% {
+    top: 0; /* End at the top of the page */
+  }
+}
+
+/* Smooth scrolling for anchor links (CSS) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navbar ul li a {
+    font-size: 18px;
+    padding: 10px;
+    background-color: transparent;
+  }
 }

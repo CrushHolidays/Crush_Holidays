@@ -2,8 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import "./Home.css";
 import Form from './Form'; // Import the Form component
 import ReviewForm from "./ReviewForm";
-// Remove this Navbar import as well, since it's no longer needed in Home.js
-import Navbar from "./Navbar";
+import Navbar from "./Navbar"; // Import Navbar
 
 function CustomCarousel({ children }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -120,7 +119,9 @@ function Home() {
 
   return (
     <div className="home">
-      <Navbar/>
+      {/* Navbar is now included and slides with the page */}
+      <Navbar /> {/* The sliding navbar */}
+      
       <CustomCarousel>
         {slides.map((slide, index) => (
           <div
@@ -136,12 +137,13 @@ function Home() {
         ))}
       </CustomCarousel>
       <Form /> {/* Include the Form component */}
-      <div style={{ position: "fixed", bottom: "20px", right: "20px" }}>
-        <a href="https://wa.me/+918762680858?text=Hi%20there!%20I%27m%20interested%20in%20planning%20a%20trip%20with%20your%20service.%20Can%20you%20help%20me%20get%20started?" 
-           target="_blank" rel="noopener noreferrer">
-          <img src="/whatsapp-icon.png" alt="WhatsApp" style={{ width: "50px", height: "50px" }} />
-        </a>
-      </div>
+      <div style={{ position: "fixed", bottom: "20px", right: "20px", zIndex: 9999 }}>
+  <a href="https://wa.me/+918762680858?text=Hi%20there!%20I%27m%20interested%20in%20planning%20a%20trip%20with%20your%20service.%20Can%20you%20help%20me%20get%20started?"
+     target="_blank" rel="noopener noreferrer">
+    <img src="/whatsapp-icon.png" alt="WhatsApp" style={{ width: "50px", height: "50px" }} />
+  </a>
+</div>
+
       <div>
         {/* <ReviewForm/> */}
       </div>
@@ -150,6 +152,7 @@ function Home() {
 }
 
 export default Home;
+
 
 
 

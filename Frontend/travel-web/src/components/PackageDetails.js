@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import './PackageDetails.css';
+import Navbar from './Navbar';  // Import Navbar
+import Contact from './Contact';
 
 const PackageDetails = () => {
   const { id } = useParams();
@@ -28,106 +31,97 @@ const PackageDetails = () => {
   }, [id]);
 
   if (loading) {
-    return <p className="text-center text-gray-600 mt-20">Loading package details...</p>;
+    return <p className="loading-text">Loading package details...</p>;
   }
 
   if (error) {
     return (
-      <div className="text-red-500 p-4 bg-red-100 border border-red-300 rounded max-w-md mx-auto mt-20">
+      <div className="error-message">
         <p>Error: {error}</p>
       </div>
     );
   }
 
-  if (!packageDetails || !packageDetails.itinerary) {
-    return <p className="text-center text-gray-600 mt-20">No package details or itinerary found.</p>;
+  if (!packageDetails) {
+    return <p className="loading-text">No package details found.</p>;
   }
 
-  let imageUrls = [];
-  try {
-    imageUrls = packageDetails.image_url ? JSON.parse(packageDetails.image_url) : [];
-  } catch (e) {
-    console.error("Error parsing image URLs:", e);
-    imageUrls = [];
-  }
+  const imageUrl = packageDetails.image_url
+    ? JSON.parse(packageDetails.image_url)[0]
+    : "https://via.placeholder.com/1200x600";
 
   return (
-    <div className="flex flex-col items-center p-6 bg-gradient-to-b from-blue-500 to-white min-h-screen">
+    <div className="package-container">
+      {/* <Navbar /> */}
       {/* Hero Section */}
       <header
-        className="w-full bg-cover bg-center py-16 mb-8 text-white"
-        style={{ backgroundImage: `url(${imageUrls[0] || "https://via.placeholder.com/1200x600"})` }}
+        className="hero-header"
+        style={{ backgroundImage: `url(${imageUrl})` }}
       >
-        <div className="bg-black bg-opacity-50 p-8 rounded-lg max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl font-bold">{packageDetails.packageName}</h1>
-          <p className="text-lg mt-2">An unforgettable adventure awaits!</p>
+        <div className="hero-overlay">
+          <h1 className="hero-title">{packageDetails.packageName || "Package Title"}</h1>
         </div>
       </header>
 
-      {/* Image Gallery */}
-      <div className="flex flex-wrap gap-6 justify-center mb-8">
-        {imageUrls.length > 0 ? (
-          imageUrls.map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`${packageDetails.packageName} image ${index + 1}`}
-              className="w-64 h-40 rounded-lg shadow-md object-cover transition-transform transform hover:scale-105"
-            />
-          ))
-        ) : (
-          <p className="text-gray-500">No images available.</p>
-        )}
-      </div>
+      {/* Package Content Section */}
+      <div className="package-content">
+        <h2 className="section-title">Package Overview</h2>
+        <div className="package-info">
+          <p className="package-price">
+            Price: <span className="price-text">₹{packageDetails.price || "N/A"}</span>
+          </p>
+          <p className="package-duration">
+            Duration: <span>{packageDetails.duration || "N/A"} days</span>
+          </p>
+          <p className="package-highlights">
+            Highlights: <span>{packageDetails.highlight || "N/A"}</span>
+          </p>
+          <p className="package-discount">
+            Discount: <span className="discount-text">₹{packageDetails.discount || "N/A"}</span>
+          </p>
+        </div>
 
-      {/* Package Details */}
-      <div className="text-center mb-8">
-        <p className="text-xl font-semibold mb-2">
-          Price: <span className="text-green-600">₹{packageDetails.price || "N/A"}</span>
-        </p>
-        <p className="text-lg">Duration: {packageDetails.duration || "N/A"} days</p>
-        <p className="text-lg">Highlights: {packageDetails.highlight || "N/A"}</p>
-        <p className="text-lg">
-          Discount: <span className="text-red-500">₹{packageDetails.discount || "N/A"}</span>
-        </p>
-      </div>
+        {/* Itinerary Section */}
+        <h2 className="section-title">Itinerary</h2>
+        <div className="itinerary-grid">
+          {packageDetails.itinerary.map((day, index) => (
+            <div key={index} className="itinerary-day">
+              <h3 className="day-title">Day {day.dayNumber}</h3>
+              <p><strong>Highlights:</strong> {day.highlights || "N/A"}</p>
 
-      {/* Itinerary Section */}
-      <h2 className="text-3xl font-bold mb-6">Itinerary</h2>
+              <div className="activities-section">
+                <h4>Activities:</h4>
+                <ul className="activities-list">
+                  {day.activities.map((activity) => (
+                    <li key={activity._id}>
+                      <span className="activity-name">{activity.activityName}</span>:{" "}
+                      {activity.description || "N/A"}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {packageDetails.itinerary.map((day, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-            <h3 className="text-xl font-bold text-blue-600 mb-4">Day {day.dayNumber}</h3>
-            <p><strong>Highlights:</strong> {day.highlights || "N/A"}</p>
-
-            <div className="mt-4">
-              <h4 className="text-lg font-semibold">Activities:</h4>
-              <ul className="list-disc ml-5">
-                {day.activities.map((activity) => (
-                  <li key={activity._id}>
-                    <span className="font-medium">{activity.activityName}</span>: {activity.description || "N/A"}
-                  </li>
-                ))}
-              </ul>
+              <div className="locations-section">
+                <h4>Locations:</h4>
+                <ul className="locations-list">
+                  {day.locations.map((location) => (
+                    <li key={location._id}>
+                      <span className="location-name">{location.name}</span>:{" "}
+                      {location.description || "N/A"}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-
-            <div className="mt-4">
-              <h4 className="text-lg font-semibold">Locations:</h4>
-              <ul className="list-disc ml-5">
-                {day.locations.map((location) => (
-                  <li key={location._id}>
-                    <span className="font-medium">{location.name}</span>: {location.description || "N/A"}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
+      <Contact /> 
     </div>
   );
 };
 
 export default PackageDetails;
+
+
 
