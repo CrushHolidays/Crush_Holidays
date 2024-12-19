@@ -1,6 +1,10 @@
 import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { Link, Element } from "react-scroll";
+<<<<<<< HEAD
+=======
+import Navbar from "../src/components/Navbar";
+>>>>>>> 6497637671e906e23fcca1fa3233196eb4cfa220
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -17,6 +21,11 @@ function App() {
   return (
     <Router>
       <div>
+<<<<<<< HEAD
+=======
+        <Navbar/>
+
+>>>>>>> 6497637671e906e23fcca1fa3233196eb4cfa220
         {/* Define Routes */}
         <Routes>
           {/* Main Page with In-Page Navigation */}
@@ -24,6 +33,7 @@ function App() {
             path="/"
             element={
               <>
+<<<<<<< HEAD
                 {/* Remove the Navbar here */}
                 {/* <nav className="nav">
                   <ul>
@@ -59,6 +69,9 @@ function App() {
                     </li>
                   </ul>
                 </nav> */}
+=======
+                
+>>>>>>> 6497637671e906e23fcca1fa3233196eb4cfa220
                 
                 {/* Sections for In-Page Navigation */}
                 <Element name="home">
