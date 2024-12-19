@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { FaStar } from "react-icons/fa"; // Import React Icons for stars
+import { FaStar, FaThumbsUp } from "react-icons/fa"; // Import React Icons for stars and thumbs up
 import "./MarqueeDemo.css";
+import { IoMdMailUnread } from "react-icons/io";
 
 const ReviewCard = ({ img, name, title, content, rating }) => (
   <figure className="review-card">
+    {/* <div className="heading">
+      <h1>REVIEWS</h1>
+    </div> */}
     <div className="review-header">
       <img
         className="review-avatar"
@@ -20,10 +24,16 @@ const ReviewCard = ({ img, name, title, content, rating }) => (
       {Array.from({ length: 5 }).map((_, index) => (
         <FaStar
           key={index}
-          size={20}
+          size={18}
           color={index < rating ? "gold" : "lightgray"}
         />
       ))}
+    </div>
+
+    {/* Add icon to the top right corner */}
+    <div className="review-card-icon">
+    <IoMdMailUnread  size={30} color="rgb(11, 11, 92)"/>
+      {/* <FaThumbsUp size={24} color="green" /> */}
     </div>
   </figure>
 );
@@ -108,3 +118,4 @@ export function MarqueeDemo() {
 }
 
 export default MarqueeDemo;
+

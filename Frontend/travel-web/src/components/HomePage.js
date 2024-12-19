@@ -21,7 +21,7 @@ const CardPage = () => {
 
     return (
         <div className='destination-page'>
-            <h1 className="home-page-title">TOP DESTINATION</h1>
+            <h1 className="home-page-title">OUR PACKAGES</h1>
             <div className="home-page">
                 {packages.map((pkg) => (
                     <div
