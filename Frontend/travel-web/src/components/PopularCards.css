@@ -1,28 +1,72 @@
+.popular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  margin-bottom: 40px;
+}
+
+.popular-heading {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #131212;
+  text-transform: uppercase;
+}
+
+.popular-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
 .popular-card {
-    max-width: 300px;
-    margin: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+  width: 320px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(120, 191, 224, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.popular-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(73, 157, 216, 0.6);
+}
+
+.popular-card-image {
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.popular-card-title {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.popular-card-content {
+  padding: 15px;
+  text-align: center;
+  background: linear-gradient(to right, #f2f3f2, #87ecfa,#5acffd); 
+}
+
+.popular-card-description {
+  color: #555;
+  font-size: 0.95em;
   
-  .popular-card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .popular-card-content {
-    padding: 15px;
-  }
-  
-  .popular-card-title {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-  
-  .popular-card-description {
-    color: #555;
-  }
+  /* padding: 10px;  */
+  border-radius: 5px; /* Optional: Add rounded corners */
+  text-align: center; /* Optional: Align text to the center */
+}
+
   

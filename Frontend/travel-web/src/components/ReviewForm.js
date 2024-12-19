@@ -50,64 +50,83 @@ const ReviewForm = () => {
   };
 
   return (
-    <form className="review-form" onSubmit={handleSubmit}>
-      <h2>Share Your Experience with Us: Leave a Review!</h2>
+    <div className="review-form">
+      {/* Left Section (Form) */}
+      <div className="form-content">
+        <h2>Share Your Experience with Us: Leave a Review!</h2>
 
-      {error && <p className="error-message">{error}</p>}
+        {error && <p className="error-message">{error}</p>}
 
-      <label>Your overall rating</label>
-      <div className="star-rating">
-        {Array.from({ length: 5 }, (_, index) => (
-          <span key={index} onClick={() => setRating(index + 1)}>
-            {rating > index ? '★' : '☆'}
-          </span>
-        ))}
+        <label>Your overall rating</label>
+        <div className="star-rating">
+          {Array.from({ length: 5 }, (_, index) => (
+            <span
+              key={index}
+              onClick={() => setRating(index + 1)}
+              className={rating > index ? 'selected' : ''}
+            >
+              {rating > index ? '★' : '☆'}
+            </span>
+          ))}
+        </div>
+
+        <label>Title of your review</label>
+        <input
+          type="text"
+          value={reviewTitle}
+          onChange={(e) => setReviewTitle(e.target.value)}
+          placeholder="Summarize your review or highlight an interesting detail."
+        />
+
+        <label>Your review</label>
+        <textarea
+          value={reviewBody}
+          onChange={(e) => setReviewBody(e.target.value)}
+          placeholder="Tell people your review."
+        />
+
+        <label>Your name</label>
+        <input
+          type="text"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+          placeholder="Tell us your name."
+        />
+
+        <label>Your email</label>
+        <input
+          type="email"
+          value={userEmail}
+          onChange={(e) => setUserEmail(e.target.value)}
+          placeholder="Tell us your email."
+        />
+
+        <label>
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={() => setChecked(!checked)}
+          />
+          This review is based on my own experience and is my genuine opinion.
+        </label>
+
+        <button type="submit" disabled={loading} onClick={handleSubmit}>
+          {loading ? 'Submitting...' : 'Submit Review'}
+        </button>
       </div>
 
-      <label>Title of your review</label>
-      <input
-        type="text"
-        value={reviewTitle}
-        onChange={(e) => setReviewTitle(e.target.value)}
-        placeholder="Summarize your review or highlight an interesting detail."
-      />
-
-      <label>Your review</label>
-      <textarea
-        value={reviewBody}
-        onChange={(e) => setReviewBody(e.target.value)}
-        placeholder="Tell people your review."
-      />
-
-      <label>Your name</label>
-      <input
-        type="text"
-        value={userName}
-        onChange={(e) => setUserName(e.target.value)}
-        placeholder="Tell us your name."
-      />
-
-      <label>Your email</label>
-      <input
-        type="email"
-        value={userEmail}
-        onChange={(e) => setUserEmail(e.target.value)}
-        placeholder="Tell us your email."
-      />
-
-      <label>
-        <input
-          type="checkbox"
-          checked={checked}
-          onChange={() => setChecked(!checked)}
+      {/* Right Section (Images) */}
+      <div className="image-section">
+        <img
+          src="https://www.stayvista.com/blog/wp-content/uploads/2024/07/abhishek-prasad-N3VzleBhOvk-unsplash-1024x684.jpg"
+          alt="Review 1"
         />
-        This review is based on my own experience and is my genuine opinion.
-      </label>
-
-      <button type="submit" disabled={loading}>
-        {loading ? 'Submitting...' : 'Submit Review'}
-      </button>
-    </form>
+        <img
+          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/78/89/d4/sunset-time-in-chinese.jpg?w=500&h=400&s=1"
+          alt="Review 2"
+        />
+      </div>
+    </div>
   );
 };
 
