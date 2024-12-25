@@ -1,30 +1,18 @@
 /* Navbar container */
 .navbar {
-<<<<<<< HEAD
-  position: fixed; /* Fixed position at the top */
-  top: -100px; /* Initially positioned off-screen */
-  left: 0;
-  width: 100%; /* Full width */
-  z-index: 1000; /* Ensure it's above other content */
-=======
-  position: fixed; /* Keeps navbar fixed at the top */
+  position: fixed; 
+  margin-left:10;/* Keeps navbar fixed at the top */
   top: 0; /* Always pinned to the top of the viewport */
   left: 0;
   width: 100%; /* Spans the full width of the viewport */
   z-index: 1000; /* Ensures it stays above other content */
->>>>>>> 6497637671e906e23fcca1fa3233196eb4cfa220
   display: flex;
   justify-content: space-between; /* Space between logo and navbar links */
   align-items: center;
   padding: 10px 20px;
   background: rgba(15, 14, 14, 0.95); /* Slightly opaque background */
   color: white;
-<<<<<<< HEAD
-  animation: slideDown 0.5s ease-out forwards; /* Slide-in animation */
-  transition: top 0.5s ease-out;
-=======
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds subtle shadow */
->>>>>>> 6497637671e906e23fcca1fa3233196eb4cfa220
 }
 
 /* Add space below the navbar to prevent overlap with content */
@@ -47,11 +35,7 @@
 .navbar ul {
   list-style: none;
   display: flex;
-<<<<<<< HEAD
-  gap: 4rem;
-=======
   gap: 20px; /* Spacing between items */
->>>>>>> 6497637671e906e23fcca1fa3233196eb4cfa220
   margin: 0;
   padding: 0;
 }
@@ -66,14 +50,7 @@
   color: white;
   text-decoration: none;
   font-size: 16px;
-<<<<<<< HEAD
-  font-weight: 500; /* Make the font a little bolder */
-  transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease; /* Smooth hover effect */
-  padding: 5px 10px; /* Add padding for more click area */
-  border-radius: 5px; /* Rounded corners for the background hover effect */
-=======
   transition: color 0.3s ease;
->>>>>>> 6497637671e906e23fcca1fa3233196eb4cfa220
 }
 
 /* Hover effect for links */
