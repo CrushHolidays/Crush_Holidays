@@ -35,7 +35,7 @@ const CardPage = () => {
                                 alt={pkg.Package_name}
                                 className="card-image"
                             />
-                            <span className="price-badge">₹{pkg.Discount}</span>
+                            <span className="price-badge">₹{pkg.Price-pkg.Discount}</span>
                         </div>
                         <div className="card-content">
                             <h3>{pkg.Package_name.replace(/\"/g, "")}</h3>

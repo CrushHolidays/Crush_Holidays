@@ -46,11 +46,13 @@ const PackageDetails = () => {
     return <p className="loading-text">No package details found.</p>;
   }
 
-  const imageUrl = packageDetails.image_url
-    ? JSON.parse(packageDetails.image_url)[0]
+  const imageUrl = packageDetails.image_url && packageDetails.image_url.length > 0
+    ? packageDetails.image_url[0]
     : "https://via.placeholder.com/1200x600";
 
   return (
+    <>
+    <Navbar/>
     <div className="package-container">
       {/* <Navbar /> */}
       {/* Hero Section */}
@@ -84,44 +86,68 @@ const PackageDetails = () => {
         {/* Itinerary Section */}
         <h2 className="section-title">Itinerary</h2>
         <div className="itinerary-grid">
-          {packageDetails.itinerary.map((day, index) => (
-            <div key={index} className="itinerary-day">
-              <h3 className="day-title">Day {day.dayNumber}</h3>
-              <p><strong>Highlights:</strong> {day.highlights || "N/A"}</p>
+          {packageDetails.itinerary && Array.isArray(packageDetails.itinerary) && packageDetails.itinerary.length > 0 ? (
+            packageDetails.itinerary.map((planSet, index) => (
+              <div key={index} className="itinerary-day-set">
+                <h3 className="itinerary-day-set-title">
+                  Plan  {index + 1} {/* Displaying Plan Set number */}
+                </h3>
+                {planSet.plans && Array.isArray(planSet.plans) && planSet.plans.length > 0 ? (
+                  planSet.plans.map((day, dayIndex) => (
+                    <div key={dayIndex} className="itinerary-day">
+                      <h4 className="day-title">Day {day.dayNumber}</h4>
+                      <p><strong>Highlights:</strong> {day.highlights || "N/A"}</p>
 
-              <div className="activities-section">
-                <h4>Activities:</h4>
-                <ul className="activities-list">
-                  {day.activities.map((activity) => (
-                    <li key={activity._id}>
-                      <span className="activity-name">{activity.activityName}</span>:{" "}
-                      {activity.description || "N/A"}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                      <div className="activities-section">
+                        <h5>Activities:</h5>
+                        <ul className="activities-list">
+                          {day.activities && Array.isArray(day.activities) && day.activities.length > 0 ? (
+                            day.activities.map((activity, activityIndex) => (
+                              <li key={activityIndex}>
+                                <span className="activity-name">{activity.activityName}</span>:{" "}
+                                {activity.description || "N/A"} -{" "}
+                                <span>{activity.time || "N/A"}</span> at{" "}
+                                <span>{activity.location || "N/A"}</span>
+                              </li>
+                            ))
+                          ) : (
+                            <li>No activities available</li>
+                          )}
+                        </ul>
+                      </div>
 
-              <div className="locations-section">
-                <h4>Locations:</h4>
-                <ul className="locations-list">
-                  {day.locations.map((location) => (
-                    <li key={location._id}>
-                      <span className="location-name">{location.name}</span>:{" "}
-                      {location.description || "N/A"}
-                    </li>
-                  ))}
-                </ul>
+                      <div className="locations-section">
+                        <h5>Locations:</h5>
+                        <ul className="locations-list">
+                          {day.locations && Array.isArray(day.locations) && day.locations.length > 0 ? (
+                            day.locations.map((location, locationIndex) => (
+                              <li key={locationIndex}>
+                                <span className="location-name">{location.name}</span>:{" "}
+                                {location.description || "N/A"} (Address:{" "}
+                                {location.address || "N/A"})
+                              </li>
+                            ))
+                          ) : (
+                            <li>No locations available</li>
+                          )}
+                        </ul>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <p>No plans available</p>
+                )}
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p>No itinerary available for this package</p>
+          )}
         </div>
       </div>
       <Contact /> 
     </div>
+    </>
   );
 };
 
 export default PackageDetails;
-
-
-

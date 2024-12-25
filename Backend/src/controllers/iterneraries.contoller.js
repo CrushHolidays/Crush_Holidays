@@ -6,68 +6,96 @@ const newItinerary = asyncHandler(async (req, res) => {
   const responseData = Array.isArray(req.body) ? req.body : [req.body];
   const responses = [];
 
-  // Use Promise.all to handle multiple itinerary creations in parallel
   for (const data of responseData) {
-    const { name, day_no, highlights, activities, locations } = data;
+    const { name, plan } = data;
 
-    // Find the package by name, using await to ensure the result is returned before proceeding
-    const package_name = await Packages.findOne({ Package_name: name }).select("_id");
+    // Find the package by name
+    const packageName = await Packages.findOne({ Package_name: name }).select("_id");
 
-    if (!package_name) {
+    if (!packageName) {
       return res.status(400).json({ message: "Package name not found" });
     }
 
-    // Create a new itinerary document with the provided data
-    const newItinerary = new Itinerary({
-      packageName: package_name._id, // Using the _id of the found package
-      dayNumber: day_no,
-      highlights,
-      activities,
-      locations,
+    // Format the plans array
+    const formattedPlans = Array.isArray(plan) ? plan.map(plans => ({
+      dayNumber: plans.day_no,
+      highlights: plans.highlights,
+      activities: plans.activities || [],
+      locations: plans.locations || [],
+    })) : [];
+
+    // Create a new itinerary with all plans
+    const itinerary = new Itinerary({
+      packageName: packageName._id,
+      plans: formattedPlans, // Embed plans into the itinerary
     });
 
-    // Save the itinerary and add it to the responses array
-    const savedItinerary = await newItinerary.save();
+    // Save the itinerary
+    const savedItinerary = await itinerary.save();
     responses.push(savedItinerary);
   }
 
-  // Return the response with all saved itineraries
   return res.status(201).json(responses);
 });
-
 const getItineraryByPackage = asyncHandler(async (req, res) => {
-  // Get the packageId (not packageName) from the URL params
-  const packageId = req.params.packageId;
+  try {
+    console.log("Fetching Itinerary by PackageId");
+    // Extract the packageId from the URL params
+    const packageId = req.params.packageId;
 
-  // Find the package by ID to retrieve the package details
-  const packageDetails = await Packages.findById(packageId);
+    // Fetch the package details using the provided packageId
+    const packageDetails = await Packages.findById(packageId);
 
-  if (!packageDetails) {
-    return res.status(404).json({ message: "Package not found" });
+    // Check if the package exists
+    if (!packageDetails) {
+      return res.status(404).json({ message: "Package not found" });
+    }
+
+    console.log("Package Details:", packageDetails);
+
+    // Fetch itineraries related to the packageId and populate `packageName`
+    const itineraries = await Itinerary.find({ packageName: packageId });
+    
+
+    // Check if itineraries exist
+    if (!itineraries || itineraries.length === 0) {
+      return res.status(404).json({ message: "Itineraries not found for the package" });
+    }
+
+    // Structure the response
+    const formattedResponse = {
+      packageName: packageDetails.Package_name,
+      price: packageDetails.Price,
+      duration: packageDetails.Duration,
+      highlight: packageDetails.Highlight,
+      discount: packageDetails.Discount,
+      image_url: JSON.parse(packageDetails.Image_url || "[]"),
+      itinerary: itineraries.map((itinerary) => ({
+        plans: itinerary.plans.map((plan) => ({
+          dayNumber: plan.dayNumber,
+          highlights: plan.highlights,
+          activities: plan.activities.map((activity) => ({
+            activityName: activity.activityName,
+            description: activity.description,
+            time: activity.time,
+            location: activity.location,
+          })),
+          locations: plan.locations.map((location) => ({
+            name: location.name,
+            address: location.address,
+            description: location.description,
+          })),
+        })),
+      })),
+    };
+
+    // Return the response with status 200
+    return res.status(200).json(formattedResponse);
+  } catch (error) {
+    // Handle errors and respond with a status 500
+    console.error("Error fetching itineraries:", error);
+    return res.status(500).json({ message: "Internal Server Error", error: error.message });
   }
-
-  // Find itineraries for the package and populate packageName field
-  const itineraries = await Itinerary.find({ packageName: packageId })
-    .populate('packageName')
-    .sort({ dayNumber: 1 }); // Sort by dayNumber to ensure proper day ordering
-
-  // Group itineraries by package name
-  const formattedResponse = {
-    packageName: packageDetails.Package_name,
-    price: packageDetails.Price,
-    duration: packageDetails.Duration,
-    highlight: packageDetails.Highlight,
-    discount: packageDetails.Discount,
-    image_url: packageDetails.Image_url,
-    itinerary: itineraries.map(itinerary => ({
-      dayNumber: itinerary.dayNumber,
-      highlights: itinerary.highlights,
-      activities: itinerary.activities,
-      locations: itinerary.locations
-    }))
-  };
-
-  return res.status(200).json(formattedResponse);
 });
 
-export { newItinerary,getItineraryByPackage };
+export { newItinerary, getItineraryByPackage };

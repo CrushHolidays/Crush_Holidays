@@ -1,49 +1,74 @@
 import React from "react";
-import { Link } from "react-scroll";  // Import from react-scroll
-import './Navbar.css'
+import { Link as ScrollLink } from "react-scroll"; // Import from react-scroll
+import { Link as RouterLink, useLocation } from "react-router-dom"; // Import from react-router-dom
+import './Navbar.css';
 
 function Navbar() {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/"; // Check if the current route is the main page
+
   return (
     <div className="navbar">
       <div className="logo">Travel Site</div>
       <ul>
-        <li>
-          <Link to="home" smooth={true} duration={500}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="about" smooth={true} duration={500}>
-            About
-          </Link>
-        </li>
-        <li>
-          <Link to="packages" smooth={true} duration={500}>
-            Packages
-          </Link>
-        </li>
-        <li>
-          <Link to="marquee-demo" smooth={true} duration={500}>
-            Feedback
-          </Link>
-        </li>
-        <li>
-          <Link to="PopularCards" smooth={true} duration={500}>
-            PopularCards
-          </Link>
-        </li>
-        <li>
-          <Link to="contact" smooth={true} duration={500}>
-            Contact
-          </Link>
-        </li>
-       
+        {isHomePage ? (
+          <>
+            <li>
+              <ScrollLink to="home" smooth={true} duration={500}>
+                Home
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="about" smooth={true} duration={500}>
+                About
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="packages" smooth={true} duration={500}>
+                Packages
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="marquee-demo" smooth={true} duration={500}>
+                Feedback
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="PopularCards" smooth={true} duration={500}>
+                Popular Cards
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="contact" smooth={true} duration={500}>
+                Contact
+              </ScrollLink>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <RouterLink to="/">Home</RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/">About</RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/">Packages</RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/">Feedback</RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/">Popular Cards</RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/">Contact</RouterLink>
+            </li>
+          </>
+        )}
       </ul>
     </div>
   );
 }
 
 export default Navbar;
-
-
-
