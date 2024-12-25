@@ -5,9 +5,6 @@ import { IoMdMailUnread } from "react-icons/io";
 
 const ReviewCard = ({ img, name, title, content, rating }) => (
   <figure className="review-card">
-    {/* <div className="heading">
-      <h1>REVIEWS</h1>
-    </div> */}
     <div className="review-header">
       <img
         className="review-avatar"
@@ -32,8 +29,7 @@ const ReviewCard = ({ img, name, title, content, rating }) => (
 
     {/* Add icon to the top right corner */}
     <div className="review-card-icon">
-    <IoMdMailUnread  size={30} color="rgb(11, 11, 92)"/>
-      {/* <FaThumbsUp size={24} color="green" /> */}
+      <IoMdMailUnread size={30} color="rgb(11, 11, 92)" />
     </div>
   </figure>
 );
@@ -87,6 +83,9 @@ export function MarqueeDemo() {
 
   return (
     <div className="marquee-container">
+      {/* Title for the whole review section */}
+      <h2 className="reviews-section-title">What Our Customers Say</h2>
+
       <div className="marquee" style={{ animationDuration: "20s" }}>
         {firstRow.map((review) => (
           <ReviewCard
@@ -118,4 +117,5 @@ export function MarqueeDemo() {
 }
 
 export default MarqueeDemo;
+
 

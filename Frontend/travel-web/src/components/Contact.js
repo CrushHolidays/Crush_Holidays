@@ -1,41 +1,43 @@
 import React from 'react';
 import './Contact.css';
-import { FiInstagram } from "react-icons/fi";
-
 
 const Contact = () => {
   return (
-    <div className="contact-section">
-      <div className="contact-info">
-        <h2>Connect with our team</h2>
-        {/* <p>Address: Ground floor, No 800/7A, Bogadi 2nd Stage South Park, Bogadi Road. Near Amritha College Mysore Karnataka – 570026</p> */}
-         <p>GST – XXXXXXXXXXXXXXX</p>
-        <p>Phone: XXXXXXXXXXXXXXX</p>
-        <p>Email: crushholidays@gmail.com</p>
-        <div className="social-media">
-          <a href="https://www.instagram.com/crush_holidayz_09/?igsh=MXNvYmRpNW9laWgzNQ%3D%3D#" target="_blank" rel="noopener noreferrer">
-          <FiInstagram size={50}  color='#ff6600'/>
-          </a>
+    <footer className="footer">
+      <div className="footer-top">
+        <p>HEARD ENOUGH?</p>
+        <h2>Contact</h2>
+        {/* <button className="contact-button">→</button> */}
+      </div>
+      <div className="footer-bottom">
+        <div className="footer-column">
+          <h3>The agency for Make Your Travel Safe</h3>
+          <p><a href="mailto:newbusiness@weareimpero.com">newbusiness@weareimpero.com</a></p>
+          <p>+44 20 7989 7591</p>
+          <p>Unit 306, Metropolitan Wharf,<br />70 Wapping Wall, London E1W 3SS</p>
+          <a href="#map-london">SEE ON MAP ↗</a>
+        </div>
+        <div className="footer-column">
+          <p><a href="mailto:buenosaires@weareimpero.com">buenosaires@weareimpero.com</a></p>
+          <p>+54 11 6789 7849</p>
+          <p>Cabildo 1455 1st floor, Buenos Aires</p>
+          <a href="#map-buenos-aires">SEE ON MAP ↗</a>
+        </div>
+        <div className="footer-column">
+          <p>WANT TO BE THE SMARTEST IN YOUR OFFICE?</p>
+          <a href="#newsletter">SIGN UP FOR OUR NEWSLETTER ↗</a>
+          <div className="social-icons">
+            <a href="#behance">Behance</a>
+            <a href="#instagram">Instagram</a>
+            <a href="#linkedin">LinkedIn</a>
+          </div>
         </div>
       </div>
-      <div className="contact-form">
-        <h2>Let us Contact you</h2>
-        <form>
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <input type="text" placeholder="Your Phone No" required />
-          <input type="text" placeholder="Your City" required />
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-      <footer>
-        <p>Powered by Crushholidays, Design & Developed by Team Alpha</p>
-        <p>We are committed to safeguarding the personal information and data you share with us. Your trust is important to us, and we want to ensure that you are fully informed about how we handle your data. To learn more about our data protection practices and your rights, please read our full Privacy Policy.</p>
-      </footer>
-    </div>
+    </footer>
   );
 };
 
 export default Contact;
+
 
 

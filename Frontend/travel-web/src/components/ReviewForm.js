@@ -50,7 +50,11 @@ const ReviewForm = () => {
   };
 
   return (
-    <div className="review-form">
+    <div className='main'>
+      < div className='header'>
+        <h1>Submit a Review</h1>
+      </div>
+          <div className="review-form">
       {/* Left Section (Form) */}
       <div className="form-content">
         <h2>Share Your Experience with Us: Leave a Review!</h2>
@@ -126,6 +130,7 @@ const ReviewForm = () => {
           alt="Review 2"
         />
       </div>
+    </div>
     </div>
   );
 };

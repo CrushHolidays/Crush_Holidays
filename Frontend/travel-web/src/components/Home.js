@@ -4,6 +4,7 @@ import Form from './Form'; // Import the Form component
 import ReviewForm from "./ReviewForm";
 
 import Navbar from "./Navbar"; // Import Navbar
+import VehicleCard from "./VehicleCard";
 
 // Remove this Navbar import as well, since it's no longer needed in Home.js
 
@@ -152,7 +153,7 @@ function Home() {
 </div>
 
       <div>
-        {/* <ReviewForm/> */}
+        {/* <VehicleCard/> */}
       </div>
     </div>
   );

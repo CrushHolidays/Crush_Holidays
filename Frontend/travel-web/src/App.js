@@ -12,6 +12,7 @@ import "./App.css";
 import ReviewForm from "./components/ReviewForm";
 import CardPage from "./components/HomePage";
 import PopularCards from "./components/PopularCards";
+import VehicleCard from "./components/VehicleCard";
 
 function App() {
   return (
@@ -43,6 +44,9 @@ function App() {
                 </Element>
                 <Element name="contact">
                   <Contact />
+                </Element>
+                <Element name="VehicleCard">
+                  <VehicleCard />
                 </Element>
                 
               </>

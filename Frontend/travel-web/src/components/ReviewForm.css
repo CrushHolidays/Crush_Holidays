@@ -9,15 +9,39 @@
   width: 1100px; /* Increased max width for larger form */
   /* height: auto;  */
   gap: 50px;
-  /* background-color: #f9f9f9; */
+  background-color: #f9f9f9;
   border-radius: 12px;
-  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); */
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); */
   transition: all 0.3s ease-in-out;
+}
+/* Header Section */
+.header {
+  background-color: white; 
+  padding: 30px; 
+  text-align: center; /* Center-align the text */
+  border-radius: 12px; /* Rounded corners for the header */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
+  margin-bottom: 20px; /* Space below the header */
+}
+
+/* Header Text Styling */
+.header h1 {
+  font-size: 3rem; /* Large font size */
+  color:  #e1800a; /* White color for the text */
+  font-weight: 700; /* Bold text */
+  text-transform: uppercase; /* Uppercase letters for a more impactful look */
+  letter-spacing: 1.5px; /* Slight spacing between letters */
+  margin: 0; /* Remove default margin */
+  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+}
+
+.header h1:hover {
+  color: #dd871e; /* Change color to a warm yellow/orange on hover */
 }
 
 /* Left section of the form (with text content) */
 .review-form .form-content {
-  width: 50%; /* Increased width for the form content */
+  width: 45%; /* Increased width for the form content */
   margin: 0;
   padding: 20px;
   background-image: linear-gradient(135deg, rgb(243, 245, 247), #73bcea, #d4b383, #dd871e);
@@ -156,7 +180,7 @@ button:disabled {
 
 .review-form .image-section img {
   width: 600px; /* Ensure the images take up the full width */
-  height: 280px; /* Fixed height for images */
+  height: 290px; /* Fixed height for images */
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   object-fit: cover;
