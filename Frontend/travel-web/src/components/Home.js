@@ -2,12 +2,12 @@ import React, { useState, useEffect, useCallback } from "react";
 import "./Home.css";
 import Form from './Form'; // Import the Form component
 import ReviewForm from "./ReviewForm";
-<<<<<<< HEAD
+
 import Navbar from "./Navbar"; // Import Navbar
-=======
+
 // Remove this Navbar import as well, since it's no longer needed in Home.js
 
->>>>>>> 6497637671e906e23fcca1fa3233196eb4cfa220
+
 
 function CustomCarousel({ children }) {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -124,11 +124,10 @@ function Home() {
 
   return (
     <div className="home">
-<<<<<<< HEAD
       {/* Navbar is now included and slides with the page */}
       <Navbar /> {/* The sliding navbar */}
-=======
->>>>>>> 6497637671e906e23fcca1fa3233196eb4cfa220
+
+
       
       <CustomCarousel>
         {slides.map((slide, index) => (
