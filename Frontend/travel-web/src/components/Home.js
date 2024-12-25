@@ -124,10 +124,11 @@ function Home() {
   ];
 
   return (
+    
     <div className="home">
       {/* Navbar is now included and slides with the page */}
-      <Navbar /> {/* The sliding navbar */}
-
+     {/* The sliding navbar */}
+     <Navbar />
 
       
       <CustomCarousel>
@@ -156,6 +157,7 @@ function Home() {
         {/* <VehicleCard/> */}
       </div>
     </div>
+   
   );
 }
 
