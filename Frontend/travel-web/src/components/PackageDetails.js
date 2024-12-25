@@ -51,6 +51,8 @@ const PackageDetails = () => {
     : "https://via.placeholder.com/1200x600";
 
   return (
+    <>
+    <Navbar/>
     <div className="package-container">
       {/* <Navbar /> */}
       {/* Hero Section */}
@@ -144,6 +146,7 @@ const PackageDetails = () => {
       </div>
       <Contact /> 
     </div>
+    </>
   );
 };
 

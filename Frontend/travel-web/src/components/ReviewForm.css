@@ -1,140 +1,198 @@
+/* Overall layout of the form container */
+/* Overall layout of the form container */
+.review-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  margin: 20px auto;
+  width: 1100px; /* Increased max width for larger form */
+  /* height: auto;  */
+  gap: 50px;
+  /* background-color: #f9f9f9; */
+  border-radius: 12px;
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); */
+  transition: all 0.3s ease-in-out;
+}
 
+/* Left section of the form (with text content) */
+.review-form .form-content {
+  width: 50%; /* Increased width for the form content */
+  margin: 0;
+  padding: 20px;
+  background-image: linear-gradient(135deg, rgb(243, 245, 247), #73bcea, #d4b383, #dd871e);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+/* Form title */
+.review-form h2 {
+  font-size: 1.5rem; /* Reduced font size */
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-align: left;
+  transition: color 0.3s ease;
+}
+
+.review-form h2:hover {
+  color: black;
+}
+
+/* Labels */
+.review-form label {
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Inputs and textarea */
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+  outline: none;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(30, 144, 255, 0.3);
+}
+
+/* Textarea adjustments */
+textarea {
+  height: 100px; /* Fixed height */
+  resize: vertical;
+}
+
+/* Star rating */
+.star-rating {
+  display: flex;
+  gap: 5px;
+  font-size: 1.3rem; /* Adjusted size for compactness */
+  cursor: pointer;
+  color: #FFD700;
+}
+
+.star-rating span {
+  transition: transform 0.3s ease-in-out;
+}
+
+.star-rating span:hover {
+  transform: scale(1.2);
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(49, 49, 49);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #040404;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Checkbox */
+.review-form input[type="checkbox"] {
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.review-form input[type="checkbox"]:checked {
+  transform: scale(1.2);
+}
+
+/* Error message */
+.error-message {
+  color: #d9534f;
+  background-color: #f2dede;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ebccd1;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-align: left;
+  animation: errorAnimation 0.5s ease-in-out;
+}
+
+@keyframes errorAnimation {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Right section for images */
+.review-form .image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-form .image-section img {
+  width: 600px; /* Ensure the images take up the full width */
+  height: 280px; /* Fixed height for images */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.review-form .image-section img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
   .review-form {
-    
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 30px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .review-form .form-content,
+  .review-form .image-section {
+    width: 100%;
   }
 
   .review-form h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    font-size: 1.8em;
-    transition: color 0.3s ease;
+    font-size: 1.3rem;
   }
 
-  .review-form h2:hover {
-    color: #4CAF50;
-  }
-
-  .review-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #333;
-    font-size: 1.1em;
-  }
-
-  .review-form input, .review-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .review-form input:focus, .review-form textarea:focus {
-    border-color: #4CAF50;
-    box-shadow: 0 0 5px rgba(0, 128, 0, 0.2);
-    outline: none;
-  }
-  .review-form .star-rating {
-    color: #FFD700; /* Gold color */
-    text-shadow: 
-      -1px -1px 0 #000, /* Black shadow to the top-left */
-       1px -1px 0 #000, /* Black shadow to the top-right */
-      -1px  1px 0 #000, /* Black shadow to the bottom-left */
-       1px  1px 0 #000; /* Black shadow to the bottom-right */
-    display: flex;
-    gap: 5px;
-    justify-content: space-around;
-    margin-bottom: 20px;
-    font-size: 2em;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  
-
-  .review-form .star-rating span:hover {
-    transform: scale(1.2);
-  }
-
+  .review-form input,
+  .review-form textarea,
   .review-form button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
   }
 
-  .review-form button:hover {
-    background-color: #45a049;
-    transform: scale(1.05);
+  .review-form .image-section img {
+    max-height: 250px; /* Adjusted size for smaller screens */
   }
-
-  .review-form button:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
-  }
-
-  .review-form input[type="checkbox"] {
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-  }
-
-  .review-form input[type="checkbox"]:checked {
-    transform: scale(1.2);
-  }
-
-  .review-form .error-message {
-    color: #d9534f;
-    background-color: #f2dede;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ebccd1;
-    border-radius: 5px;
-    font-size: 1em;
-    text-align: center;
-    animation: errorAnimation 0.5s ease-in-out;
-  }
-
-  @keyframes errorAnimation {
-    0% {
-        transform: translateY(-10px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .review-form {
-        padding: 20px;
-    }
-
-    .review-form h2 {
-        font-size: 1.5em;
-    }
-
-    .review-form input, .review-form textarea, .review-form button {
-        font-size: 1em;
-    }
-  }
+}

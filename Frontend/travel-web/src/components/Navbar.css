@@ -1,7 +1,6 @@
 /* Navbar container */
 .navbar {
-  position: fixed; 
-  margin-left:10;/* Keeps navbar fixed at the top */
+  position: sticky; /* Changed to sticky */
   top: 0; /* Always pinned to the top of the viewport */
   left: 0;
   width: 100%; /* Spans the full width of the viewport */
@@ -50,7 +49,10 @@
   color: white;
   text-decoration: none;
   font-size: 16px;
-  transition: color 0.3s ease;
+  font-weight: 500; /* Make the font a little bolder */
+  transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease; /* Smooth hover effect */
+  padding: 5px 10px; /* Add padding for more click area */
+  border-radius: 5px; /* Rounded corners for the background hover effect */
 }
 
 /* Hover effect for links */
@@ -66,16 +68,6 @@
   color: #fff; /* Change logo color to white on hover */
   transform: scale(1.1); /* Slight zoom effect for the logo */
   text-shadow: 0 0 10px rgba(233, 67, 30, 0.8); /* Glowing effect on the logo */
-}
-
-/* Animation for sliding the navbar from top to bottom */
-@keyframes slideDown {
-  0% {
-    top: -100px; /* Start above the screen */
-  }
-  100% {
-    top: 0; /* End at the top of the page */
-  }
 }
 
 /* Smooth scrolling for anchor links (CSS) */
