@@ -33,6 +33,9 @@ function App() {
                 <Element name="packages">
                   <CardPage />
                 </Element>
+                <Element name="VehicleCard">
+                  <VehicleCard />
+                </Element>
                 <Element name="marquee-demo">
                   <MarqueeDemo />
                 </Element>
@@ -45,9 +48,7 @@ function App() {
                 <Element name="contact">
                   <Contact />
                 </Element>
-                <Element name="VehicleCard">
-                  <VehicleCard />
-                </Element>
+                
                 
               </>
             }
