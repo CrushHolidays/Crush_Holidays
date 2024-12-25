@@ -10,8 +10,9 @@ function About() {
             <p>We create unforgettable adventures, customized for your group.</p>
             <button className="callback-button">
               <a href="tel:+918762680858" >
-              <span role="img" aria-label="phone" href>📞</span> Get a Callback
-              </a>
+              <span role="img" aria-label="phone" href>📞</span> 
+              Call us now!</a>
+              
             </button>
           </div>
           <div className="image-section">
