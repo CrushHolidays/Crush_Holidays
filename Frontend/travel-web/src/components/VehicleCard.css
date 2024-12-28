@@ -3,6 +3,21 @@
   flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
+  margin-bottom: 80px;
+}
+.vehicle-heading {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  /* height: 100vh;  */
+  padding-bottom: 30px;
+  text-align: center; /* Ensure text is centered inside the div */
+}
+
+.vehicle-heading h1 {
+  margin: 0; /* Remove any default margin that might be applied */
+  font-size: 3.5rem; /* Adjust the font size as needed */
+  font-weight: 700;
 }
 
 .vehicle-card {
