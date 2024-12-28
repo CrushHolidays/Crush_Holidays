@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink, useLocation } from "react-router-dom";
-import './Navbar.css';
+import "./Navbar.css";
 
 function Navbar() {
   const location = useLocation();
-  const isHomePage = location.pathname === "/"; // Check if on homepage
-
+  const isHomePage = location.pathname === "/"; 
   return (
-    <div className="navbar">
-      <div className="logo">Travel Site</div>
-      <ul>
+    <div>
+      <header>
+        <nav className="navbar">
+          <div className="logo">
+            <a href="#">Travel Site</a>
+          </div>
+          <ul>
         {isHomePage ? (
           <>
             <li>
@@ -100,9 +103,21 @@ function Navbar() {
           </>
         )}
       </ul>
+        </nav>
+      </header>
     </div>
   );
 }
 
 export default Navbar;
+
+
+
+
+
+
+
+
+
+
 
