@@ -8,7 +8,7 @@ function Navbar() {
   const isHomePage = location.pathname === "/"; 
   return (
     <div>
-      <header>
+      <header className="Header">
         <nav className="navbar">
           <div className="logo">
             <a href="#">Travel Site</a>
@@ -105,8 +105,18 @@ function Navbar() {
       </ul>
         </nav>
       </header>
-    </div>
+      </div>
   );
 }
 
 export default Navbar;
+
+
+
+
+
+
+
+
+
+

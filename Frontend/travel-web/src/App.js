@@ -13,12 +13,13 @@ import ReviewForm from "./components/ReviewForm";
 import CardPage from "./components/HomePage";
 import PopularCards from "./components/PopularCards";
 import VehicleCard from "./components/VehicleCard";
+// import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <Router>
       <div>
-        
+      
         <Routes>
           <Route
             path="/"

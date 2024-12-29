@@ -125,13 +125,13 @@ function Home() {
 
   return (
     <>
-    <Navbar />
     
+    <Navbar />
     <div className="home">
       {/* Navbar is now included and slides with the page */}
      {/* The sliding navbar */}
      
-
+     
       
       <CustomCarousel>
         {slides.map((slide, index) => (

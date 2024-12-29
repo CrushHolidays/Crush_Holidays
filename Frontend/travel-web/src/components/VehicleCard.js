@@ -30,7 +30,11 @@ function VehicleCard() {
   ];
 
   return (
-    <div className="vehicle-list">
+    <div className="vehicle-card-container">
+      <div className='vehicle-heading'>
+        <h1>OUR VEHICLES</h1>
+      </div>
+      <div className="vehicle-list">
       {vehicles.map((vehicle, index) => (
         <div key={index} className="vehicle-card">
           {/* Vehicle Image */}
@@ -54,6 +58,7 @@ function VehicleCard() {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 }

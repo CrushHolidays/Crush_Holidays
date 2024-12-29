@@ -1,24 +1,29 @@
 /* Navbar container */
 /* Navbar CSS */
-.navbar {
-  position: fixed;
+.Header{
+  position:fixed;
+  width:100%;
+  z-index:9999;
+  background-color:transparent;
+  top:0;
 
-  top: 0;
-  left: 0;
-  right: 0;
+}
+.navbar {
+  
   width: 100%;
-  z-index: 9999;  /* Keep the navbar on top of other content */
-  background-color: rgba(0, 0, 0, 0.8); /* Slight transparency */
-  padding: 15px 20px;
+    /* Keep the navbar on top of other content */
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px 20px 10px 10px;
   color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease;
+  transition:background-color 0.3s ease;
 }
 
 
 /* Navbar logo */
 .navbar .logo {
   font-size: 24px;
+  padding-left:15px;
   font-weight: bold;
   color: #e9431e;
   text-transform: uppercase;
@@ -100,3 +105,10 @@
     display: block;
   }
 }
+
+
+  
+
+  
+
+

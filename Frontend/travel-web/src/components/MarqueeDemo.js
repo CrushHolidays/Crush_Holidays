@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaStar, FaThumbsUp } from "react-icons/fa"; // Import React Icons for stars and thumbs up
+import { FaStar } from "react-icons/fa"; // Import React Icons for stars
 import "./MarqueeDemo.css";
 import { IoMdMailUnread } from "react-icons/io";
 
@@ -78,16 +78,13 @@ export function MarqueeDemo() {
     return <p>No reviews available.</p>;
   }
 
-  const firstRow = reviews.slice(0, Math.ceil(reviews.length / 2));
-  const secondRow = reviews.slice(Math.ceil(reviews.length / 2));
-
   return (
     <div className="marquee-container">
       {/* Title for the whole review section */}
       <h2 className="reviews-section-title">What Our Customers Say</h2>
 
       <div className="marquee" style={{ animationDuration: "20s" }}>
-        {firstRow.map((review) => (
+        {reviews.map((review) => (
           <ReviewCard
             key={review._id}
             img={review.img}
@@ -98,18 +95,8 @@ export function MarqueeDemo() {
           />
         ))}
       </div>
-      <div className="marquee reverse" style={{ animationDuration: "20s" }}>
-        {secondRow.map((review) => (
-          <ReviewCard
-            key={review._id}
-            img={review.img}
-            name={review.name}
-            title={review.Title}
-            content={review.content}
-            rating={review.rating}
-          />
-        ))}
-      </div>
+
+      {/* Optionally, add gradient effect on the left and right */}
       <div className="marquee-gradient left"></div>
       <div className="marquee-gradient right"></div>
     </div>
@@ -117,5 +104,6 @@ export function MarqueeDemo() {
 }
 
 export default MarqueeDemo;
+
 
 
