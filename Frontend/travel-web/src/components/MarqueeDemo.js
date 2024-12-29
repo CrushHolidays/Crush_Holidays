@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa"; // Import React Icons for stars
 import "./MarqueeDemo.css";
 import { IoMdMailUnread } from "react-icons/io";
-
+import logo from '../../src/assets/images/logo.jpg'
 const ReviewCard = ({ img, name, title, content, rating }) => (
   <figure className="review-card">
     <div className="review-header">
       <img
         className="review-avatar"
-        src={img || "https://via.placeholder.com/150"}
+        src={img || logo}
         alt={name}
       />
       <div className="review-info">

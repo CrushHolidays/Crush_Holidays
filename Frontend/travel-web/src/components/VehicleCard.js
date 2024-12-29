@@ -6,30 +6,36 @@ import vehicle3 from '../assets/images/vehicle3.jpg';
 import './VehicleCard.css';
 
 function VehicleCard() {
+  const handleWhatsAppClick = (phoneNumber, message) => {
+    const sanitizedNumber = phoneNumber.replace(/\s+/g, '').replace(/[^0-9]/g, '');
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${sanitizedNumber}?text=${encodedMessage}`;
+    window.open(whatsappURL, '_blank');
+};
   const vehicles = [
     {
       image: vehicle1,
-      title: 'Luxury Sedan',
-      description: 'A luxury sedan with spacious interiors, perfect for long trips. Comfortable, stylish, and reliable.',
-      price: '$100/day',
+      title: 'Mini Bus',
+      description: 'Spacious and comfortable, perfect for group travel and long-distance journeys.',
+      price: 'Diesel/Petrol available'
     },
     {
       image: vehicle3,
-      title: 'Sports Car',
-      description: 'Experience the thrill of driving a high-performance sports car with exceptional speed and handling.',
-      price: '$200/day',
+      title: 'Toyota Etios (Sedan)',
+      description: 'Sleek and efficient, ideal for personal or small family use..',
+      price: 'Available with low-emission engines',
     },
     {
       image:  vehicle2,
-      title: 'SUV',
-      description: 'A spacious and versatile SUV, ideal for families and adventures. Comes with advanced safety features.',
-      price: '$120/day',
+      title: 'Toyota Innova Crysta (SUV):',
+      description: ' Versatile and powerful, perfect for family trips and adventures.',
+      price: 'Diesel/Petrol available',
     },
     {
       image: 'https://vehiclecare.in/blaze/wp-content/uploads/2023/10/Tata-nexon.jpg',
-      title: 'Electric Car',
-      description: 'Eco-friendly electric car with a sleek design and cutting-edge technology for a sustainable drive.',
-      price: '$150/day',
+      title: 'Tata Nexon EV (Electric SUV):',
+      description: 'Stylish and eco-friendly, the future of sustainable urban commuting.',
+      price: 'Available with hybrid options.',
     },
   ];
 
@@ -52,13 +58,14 @@ function VehicleCard() {
           <div className="vehicle-content">
             <h3 className="vehicle-title">{vehicle.title}</h3>
             <p className="vehicle-description">{vehicle.description}</p>
-            <p className="vehicle-price">Price: {vehicle.price}</p>
+            <p className="vehicle-price">{vehicle.price}</p>
           </div>
           
           {/* Buttons */}
           <div className="vehicle-buttons">
-            <button className="btn book-now">Book Now</button>
-            <button className="btn enquiry">Enquiry</button>
+            <button className="btn book-now" onClick={()=>handleWhatsAppClick("+919611001991",`Want to Enquiry About the ${vehicle.title}  `)}>Book Now</button>
+            <a href="tel:+9611001991" ><button className="btn enquiry"><span role="img" aria-label="phone" href>📞</span> Enquiry</button></a>
+            
           </div>
         </div>
       ))}

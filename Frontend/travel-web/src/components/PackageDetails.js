@@ -9,7 +9,13 @@ const PackageDetails = () => {
     const [packageDetails, setPackageDetails] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    const handleWhatsAppClick = (phoneNumber, message) => {
+        const sanitizedNumber = phoneNumber.replace(/\s+/g, '').replace(/[^0-9]/g, '');
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappURL = `https://wa.me/${sanitizedNumber}?text=${encodedMessage}`;
+        
+        window.open(whatsappURL, '_blank');
+    };
     useEffect(() => {
         fetch(`http://localhost:7000/api/v1/Iternaries/get/${id}`)
             .then((response) => {
@@ -136,9 +142,12 @@ const PackageDetails = () => {
                                                 </li>
                                             )
                                         )
+
+                                        
                                     ) : (
                                         <li>No locations available</li>
                                     )}
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -152,6 +161,34 @@ const PackageDetails = () => {
         <p>No itinerary available for this package</p>
     )}
 </div>
+<p className="customize-plan">
+  <span>If you want to customize your plan, contact us </span>
+  
+</p>
+<button
+  className="whatsapp-button2"
+  onClick={() =>
+    handleWhatsAppClick(
+      '+919611001991',
+      `Hello, I am interested in this: ${packageDetails.Package_name}`
+    )
+  }
+>
+<a
+    href="https://wa.me/+919611001991?text=I%20would%20like%20to%20customize%20my%20plan"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="whatsapp-link"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp Icon"
+      className="whatsapp-icon"
+    />  
+    Customize on WhatsApp
+  </a>
+</button>
+
 
                 </div>
                 <Contact />

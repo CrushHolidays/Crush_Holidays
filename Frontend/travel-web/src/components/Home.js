@@ -124,12 +124,14 @@ function Home() {
   ];
 
   return (
+    <>
     
+    <Navbar />
     <div className="home">
       {/* Navbar is now included and slides with the page */}
      {/* The sliding navbar */}
-     <Navbar />
-
+     
+     
       
       <CustomCarousel>
         {slides.map((slide, index) => (
@@ -147,7 +149,7 @@ function Home() {
       </CustomCarousel>
       <Form /> {/* Include the Form component */}
       <div style={{ position: "fixed", bottom: "20px", right: "20px", zIndex: 9999 }}>
-  <a href="https://wa.me/+918762680858?text=Hi%20there!%20I%27m%20interested%20in%20planning%20a%20trip%20with%20your%20service.%20Can%20you%20help%20me%20get%20started?"
+  <a href="https://wa.me/+919611001991?text=Hi%20there!%20I%27m%20interested%20in%20planning%20a%20trip%20with%20your%20service.%20Can%20you%20help%20me%20get%20started?"
      target="_blank" rel="noopener noreferrer">
     <img src="/whatsapp-icon.png" alt="WhatsApp" style={{ width: "50px", height: "50px" }} />
   </a>
@@ -157,7 +159,7 @@ function Home() {
         {/* <VehicleCard/> */}
       </div>
     </div>
-   
+    </>
   );
 }
 

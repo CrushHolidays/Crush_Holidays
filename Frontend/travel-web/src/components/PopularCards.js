@@ -1,29 +1,29 @@
 import React from 'react';
 import './PopularCards.css';
-
 const PopularCards = () => {
   const popularPlaces = [
     {
-      title: 'MYSORE',
-      description: "Mysore, often referred to as the 'City of Palaces,' is a mesmerizing destination in Karnataka that exudes royal charm and cultural richness. Known for its splendid architecture, the city is home to the iconic Mysore Palace, a masterpiece of Indo-Saracenic design. Mysore's vibrant heritage comes alive during the famous Dasara Festival, a grand celebration filled with processions, lights, and cultural performance Mysore is also a paradise for nature lovers, with its serene lakes, and scenic hills offering a peaceful retreat. ",
-      image: 'https://karnatakatourism.org/wp-content/uploads/2020/06/Mysuru-Palace-banner-1920_1100.jpg',
+        title: 'OOTY',
+        description: "Ooty, also known as Udhagamandalam, is a charming hill station in Tamil Nadu, often referred to as the 'Queen of Hill Stations.' Nestled in the Nilgiri Hills, Ooty is renowned for its picturesque landscapes, lush tea gardens, and colonial-era architecture. The town offers a tranquil retreat with its serene lakes, vibrant botanical gardens, and the iconic Nilgiri Mountain Railway. Ooty’s pleasant climate, combined with its breathtaking views, makes it a favorite destination for nature lovers and honeymooners alike.",
+        image: 'https://img.cdn.zostel.com/blog_photo/old/botanical_garden_6SOT8IV.jpg',
     },
     {
-      title: 'Kerala',
-      description: 'Kerala, often called "God’s Own Country," is a breathtakingly beautiful state in southern India, celebrated for its serene landscapes and vibrant culture. Known for its lush green backwaters, pristine beaches, and rolling tea plantations, Kerala offers a tranquil escape into natures lap. The region is also famous for its rich cultural heritage, with traditional dance forms, music, and art that reflect the state’s vibrant history. Kerala’s warm hospitality and delicious cuisine make it a must-visit destination for travelers .',
-      image: 'https://ihplb.b-cdn.net/wp-content/uploads/2021/09/kerala-in-october-kollam-header-675x430.jpg',
+        title: 'CHIKMAGALUR',
+        description: "Chikmagalur, located in Karnataka, is a serene hill station known for its coffee plantations and misty landscapes. It is a haven for coffee enthusiasts and nature lovers, with its aromatic estates and breathtaking views of the Western Ghats. Chikmagalur offers a perfect blend of adventure and relaxation, with trekking trails, waterfalls, and wildlife sanctuaries. Its tranquil ambiance and rich history make it an ideal destination for a peaceful getaway, Chikmagalur has something for everyone.",
+        image: 'https://mediaim.expedia.com/destination/2/c2227fccaa5d9c368c44ef73d8a207cd.jpg',
     },
     {
-      title: 'Coorg',
-      description: "Coorg, located in Karnataka’s Western Ghats, is a beautiful destination that attracts nature lovers and adventure enthusiasts. With its stunning landscapes of lush green forests, rolling hills, and flowing rivers, Coorg is like a paradise. The region is famous for its vast coffee plantations, filling the air with a delightful aroma. Its rich cultural heritage and warm hospitality make it a timeless sanctuary for those seeking tranquility and natural beauty.  offering a perfect blend of adventure and relaxation.",
-      image: 'https://static.toiimg.com/thumb/47068905.cms?resizemode=75&width=1200&height=900',
+        title: 'SAKLESHPUR',
+        description: 'Sakleshpur, nestled in Karnataka’s Western Ghats, is a scenic hill station that draws nature lovers and adventurers alike. Surrounded by lush coffee plantations, misty hills, and cascading waterfalls, Sakleshpur offers a serene escape into nature. The region’s spice estates fill the air with a soothing aroma, creating an inviting ambiance. Its tranquil charm, combined with thrilling trekking trails and historical landmarks, makes Sakleshpur a hidden gem for travelers seeking peace and adventure.',
+        image: 'https://www.trawell.in/admin/images/upload/343093893Sakleshpur_Bisle_Ghat.jpg',
     },
     {
-      title: 'Sakleshpur',
-      description: 'Sakleshpur, nestled in Karnataka’s Western Ghats, is a scenic hill station that draws nature lovers and adventurers alike. Surrounded by lush coffee plantations, misty hills, and cascading waterfalls, Sakleshpur offers a serene escape into nature. The region’s spice estates fill the air with a soothing aroma, creating an inviting ambiance. Its tranquil charm, combined with thrilling trekking trails and historical landmarks, makes Sakleshpur a hidden gem for travelers seeking peace and adventure..',
-      image: 'https://www.trawell.in/admin/images/upload/343093893Sakleshpur_Bisle_Ghat.jpg',
+        title: 'WAYANAD',
+        description: "Wayanad, located in Kerala, is a captivating hill station known for its lush greenery, pristine waterfalls, and rich cultural heritage. The region is home to sprawling spice plantations, ancient caves, and scenic trekking trails that attract adventure seekers and nature enthusiasts. Wayanad’s wildlife sanctuaries, serene lakes, and vibrant traditions make it a unique blend of natural beauty and cultural charm. It’s an ideal destination for those looking to immerse themselves in Kerala’s tranquil and vibrant landscape.",
+        image: 'https://i0.wp.com/www.orientalschool.com/wp-content/uploads/2023/04/a-view-of-tea-gardens-OG-1199x627-1.png?fit=1199%2C627&ssl=1',
     },
-  ];
+];
+
 
   return (
     <div className="popular">

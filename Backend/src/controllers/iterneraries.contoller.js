@@ -39,7 +39,7 @@ const newItinerary = asyncHandler(async (req, res) => {
 });
 const getItineraryByPackage = asyncHandler(async (req, res) => {
   try {
-    console.log("Fetching Itinerary by PackageId");
+   
     // Extract the packageId from the URL params
     const packageId = req.params.packageId;
 
@@ -51,7 +51,7 @@ const getItineraryByPackage = asyncHandler(async (req, res) => {
       return res.status(404).json({ message: "Package not found" });
     }
 
-    console.log("Package Details:", packageDetails);
+    
 
     // Fetch itineraries related to the packageId and populate `packageName`
     const itineraries = await Itinerary.find({ packageName: packageId });

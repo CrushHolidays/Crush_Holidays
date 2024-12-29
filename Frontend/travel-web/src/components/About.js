@@ -6,8 +6,9 @@ function About() {
 
         <div className="container">
           <div className="text-section">
-            <h1>Bigger Group? Get special offers up to 50% Off!</h1>
-            <p>We create unforgettable adventures, customized for your group.</p>
+            <h1>ಕರ್ನಾಟಕ ಒಂದು ರಾಜ್ಯ ಹಲವು ಜಗತ್ತು
+            </h1>
+            <p>ಸಾವಿರ ಮೈಲುಗಳ ಪ್ರಯಾಣವು ಒಂದೇ ಹೆಜ್ಜೆಯಿಂದ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ, ನಿಮ್ಮೊಂದಿಗೆ ಪ್ರಪಂಚದ ಹೆಚ್ಚಿನದನ್ನು ಅನ್ವೇಷಿಸಲು ಕಾಯಲು ಸಾಧ್ಯವಿಲ್ಲ!.</p>
             <button className="callback-button">
               <a href="tel:+918762680858" >
               <span role="img" aria-label="phone" href>📞</span> 
@@ -16,7 +17,7 @@ function About() {
             </button>
           </div>
           <div className="image-section">
-            <img src="https://www.puredestinations.co.uk/wp-content/uploads/2019/10/where-to-go-on-holiday-in-october-luxury-holiday-packages--1600x700.jpg" alt="Group jumping at sunset" />
+            <img src="https://s7ap1.scene7.com/is/image/incredibleindia/2-vitthala-temple-complex-hampi-karnataka-city-hero?qlt=82&ts=1726761927494" alt="Group jumping at sunset" />
           </div>
         </div>
    

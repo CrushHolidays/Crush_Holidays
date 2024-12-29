@@ -162,3 +162,54 @@ body {
 
 
 /* Each day set is now treated as a card */
+/* General Button Styling */
+.whatsapp-button2 {
+  background-color: #25d366;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.whatsapp-button:hover {
+  background-color: #1eb656;
+}
+
+/* Customize Plan Section */
+.customize-plan {
+  margin-top: 15px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.customize-plan span {
+  color: #555;
+}
+
+.whatsapp-link {
+  text-decoration: none;
+  color: #25d366;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.whatsapp-link:hover {
+  color: #1eb656;
+}
+
+/* WhatsApp Icon Styling */
+.whatsapp-icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}

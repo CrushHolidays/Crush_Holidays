@@ -19,10 +19,14 @@ const CardPage = () => {
       navigate(`/packages/${id}`);  
    };  
   
-   const handleWhatsAppClick = (phoneNumber) => {  
-      const url = `https://wa.me/${phoneNumber}`;  
-      window.open(url, '_blank');  
-   };  
+   const handleWhatsAppClick = (phoneNumber, message) => {
+      const sanitizedNumber = phoneNumber.replace(/\s+/g, '').replace(/[^0-9]/g, '');
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/${sanitizedNumber}?text=${encodedMessage}`;
+      
+      window.open(whatsappURL, '_blank');
+  };
+  
   
    return (  
       <div className='destination-page'>  
@@ -53,11 +57,13 @@ const CardPage = () => {
                    <p className="packages">Duration: {pkg.Duration} days</p>  
                    <p className="highlights">Highlight: {pkg.Highlight.replace(/\"/g, "")}</p>  
                    <button  
-                      className="whatsapp-button"  
-                      onClick={() => handleWhatsAppClick('1234567890')} // Replace with your phone number  
-                   >  
-                      <i className="fa fa-whatsapp" aria-hidden="true"></i> Book Now  
-                   </button>  
+  className="whatsapp-button"  
+  onClick={() => handleWhatsAppClick('+919611001991', `Hello, I am interested in this: ${pkg.Package_name}`)} // Pass the custom message with package name
+>
+  Contact on WhatsApp
+  
+</button>
+
                 </div>  
               </div>  
            ))}  
