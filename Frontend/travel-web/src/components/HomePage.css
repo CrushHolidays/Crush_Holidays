@@ -1,17 +1,16 @@
 /* HomePage.css */
 
 /* General page styling */
-.destination-page{
+.destination-page {
   margin: 50px;
 }
+
 .home-page {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  /* margin: 30px; */
   padding: 20px;
-  /* background-color: #f4f4f9; */
   font-family: 'Arial', sans-serif;
 }
 
@@ -37,7 +36,7 @@
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.05); /* Add scale for hover effect */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -57,7 +56,7 @@
 }
 
 .card:hover .card-image {
-  transform: scale(1.1);
+  transform: scale(1.1); /* Image zoom on hover */
 }
 
 /* Price badge */
@@ -127,6 +126,24 @@
 .reviews {
   color: #666666;
 }
+.whatsapp-button {  
+  background-color: #4e31a7;  
+  color: #fff;  
+  border: none;  
+  padding: 10px 20px;  
+  font-size: 16px;  
+  cursor: pointer;  
+  border-radius: 5px;  
+  margin-top: 10px;  
+}  
+ 
+.whatsapp-button:hover {  
+  background-color: #4e31a7;  
+}  
+ 
+.whatsapp-button i {  
+  margin-right: 10px;  
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -136,7 +153,17 @@
   }
 
   .card {
-    width: 90%;
+    width: 95%; /* Increase card width on mobile */
+    max-width: 350px; /* Ensure the card doesn't grow too big */
+  }
+
+  /* Ensure hover effect works in mobile */
+  .card:hover {
+    transform: scale(1.05); /* Slightly increase size on hover in mobile */
+  }
+
+  .card:hover .card-image {
+    transform: scale(1.1); /* Keep the image scale on hover */
   }
 }
 
@@ -145,4 +172,10 @@
     flex-direction: column;
     gap: 5px;
   }
+
+  /* Slightly increase the card size on very small screens */
+  .card {
+    width: 100%; /* Make the card take full width on small screens */
+  }
 }
+

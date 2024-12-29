@@ -1,3 +1,4 @@
+/* General Card Styling */
 .card {
     width: 300px;
     margin: 20px;
@@ -5,12 +6,13 @@
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
 }
 
 .card-image {
@@ -75,3 +77,73 @@
 .reviews {
     font-size: 0.9rem;
 }
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .home-page {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;  /* Increase card width on smaller screens */
+        max-width: 350px;  /* Limit the max width */
+        margin: 10px 0;  /* Adjust margins for better spacing */
+    }
+
+    .card h3 {
+        font-size: 1.25rem;
+    }
+
+    .price {
+        font-size: 1rem;
+    }
+
+    .original-price {
+        font-size: 0.9rem;
+    }
+
+    .discount-price {
+        font-size: 1.1rem;
+    }
+
+    .highlights li {
+        font-size: 0.85rem;
+    }
+
+    .rating-reviews {
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra small devices (like phones in portrait) */
+@media (max-width: 480px) {
+    .card {
+        width: 100%;  /* Make the card full width */
+    }
+
+    .card h3 {
+        font-size: 1.1rem;
+    }
+
+    .price {
+        font-size: 0.9rem;
+    }
+
+    .original-price {
+        font-size: 0.8rem;
+    }
+
+    .discount-price {
+        font-size: 1rem;
+    }
+
+    .highlights li {
+        font-size: 0.8rem;
+    }
+
+    .rating-reviews {
+        font-size: 0.8rem;
+    }
+}
+

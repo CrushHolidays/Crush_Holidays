@@ -1,22 +1,26 @@
 import React from 'react';
+import vehicle1 from '../assets/images/vehicle1.jpg'; // Adjust path based on your directory structure
+import vehicle2 from '../assets/images/vehicle2.jpg';
+import vehicle3 from '../assets/images/vehicle3.jpg';
+
 import './VehicleCard.css';
 
 function VehicleCard() {
   const vehicles = [
     {
-      image: 'https://hips.hearstapps.com/hmg-prod/images/2023-genesis-g90-108-1659381777.jpg?crop=0.606xw:0.512xh;0.245xw,0.341xh&resize=700:*',
+      image: vehicle1,
       title: 'Luxury Sedan',
       description: 'A luxury sedan with spacious interiors, perfect for long trips. Comfortable, stylish, and reliable.',
       price: '$100/day',
     },
     {
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSexif9JMNuYcssfYwuZFXkQzaPWmG--YwdBw&s',
+      image: vehicle3,
       title: 'Sports Car',
       description: 'Experience the thrill of driving a high-performance sports car with exceptional speed and handling.',
       price: '$200/day',
     },
     {
-      image: 'https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=http://img.haymarketsac.in/autocarpro/4d8544ee-d33c-4d59-adb0-9b15afdd0178_10-r.jpg&w=750&h=490&q=75&c=1',
+      image:  vehicle2,
       title: 'SUV',
       description: 'A spacious and versatile SUV, ideal for families and adventures. Comes with advanced safety features.',
       price: '$120/day',

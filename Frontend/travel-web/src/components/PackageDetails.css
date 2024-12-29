@@ -1,3 +1,9 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
 /* Package Content Styling (only affects the content, not hero section) */
 .package-container {
   background-color: white;
@@ -36,53 +42,42 @@
   padding: 2rem;
   max-width: 72rem;
   margin: 0 auto;
-  background-color: #f9fafb; /* Light background color */
+  background-color: #f9fafb;
   border-radius: 1rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  margin-top: 2rem; /* Space from hero section */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Section Titles Styling (only for content) */
+/* Section Titles Styling */
 .section-title {
   font-size: 1.875rem;
   font-weight: bold;
   color: #2d3748;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: inline-block;
-  position: relative;
-  padding-bottom: 5px; /* Space between text and underline */
 }
 
-/* Orange Underline for Package Overview (only for content) */
 .section-title span {
   position: relative;
-  display: inline-block;
 }
 
 .section-title span::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   left: 0;
   width: 100%;
-  height: 2px; /* Thickness of the underline */
-  background-color: #e9431e; /* Orange color */
+  height: 2px;
+  background-color: #e9431e;
 }
 
-/* Package Information Styling (only for content) */
+/* Package Information Styling */
 .package-info {
-  margin-bottom: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .package-info p {
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: 0.875rem;
+  font-weight: bold;
   margin: 0.5rem 0;
 }
 
@@ -99,100 +94,71 @@
   color: #e53e3e;
 }
 
-/* Itinerary Grid Styling (only for content) */
+/* Itinerary Grid Styling */
 .itinerary-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem; /* Add more gap for spacing between cards */
-  margin-top: 2rem;
-}
-
-@media (min-width: 768px) {
-  .itinerary-grid {
-    grid-template-columns: 1fr 1fr; /* 2 columns for larger screens */
-  }
-}
-
-.itinerary-day-set {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  background-color: #ffffff; /* White background */
-  border-radius: 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft shadow */
-  padding: 1.5rem;
-  transition: box-shadow 0.3s ease-in-out;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+/* Itinerary Card Styling */
+.itinerary-day-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.itinerary-day-set:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* Slightly darker on hover */
-}
-
-/* Day Titles (only for content) */
-.day-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #3182ce;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #e9431e; /* Orange underline for days */
-  padding-bottom: 5px;
-}
-
-/* Activities and Locations Styling (only for content) */
-.activities-section,
-.locations-section {
-  margin-top: 1.5rem;
-}
-
+/* Activities and Locations List */
 .activities-list,
 .locations-list {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
   list-style-type: disc;
-  margin-left: 1.25rem;
+}
+
+/* Day Title Styling */
+.day-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+/* Section Title Styling */
+.activities-section h5,
+.locations-section h5 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
   color: #4a5568;
 }
 
-.activity-name,
-.location-name {
-  font-weight: 600;
-}
-
-/* Info Cards (for better layout and spacing inside content) */
-.itinerary-day {
-  background-color: #f7fafc;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
-  transition: box-shadow 0.3s ease;
-}
-
-.itinerary-day:hover {
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
-}
-
-/* Spacing and text styles for loading/error messages (only for content) */
-.loading-text {
-  text-align: center;
-  color: #718096;
-  margin-top: 5rem;
-}
-
-.error-message {
-  padding: 1rem;
-  background-color: #fed7d7;
-  border: 1px solid #fbd5d5;
-  border-radius: 0.5rem;
-  color: #e53e3e;
-  max-width: 20rem;
-  margin: 5rem auto;
-}
-
-/* Additional responsive behavior for content */
+/* Responsive Styling */
 @media (max-width: 768px) {
-  .package-info-card {
-    grid-template-columns: 1fr;
+  .itinerary-day-card {
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+  }
+
+  .day-title {
+      font-size: 1rem;
+  }
+
+  .activities-list,
+  .locations-list {
+      padding-left: 1rem;
+  }
+
+  .activities-section h5,
+  .locations-section h5 {
+      font-size: 0.875rem;
   }
 }
 
 
-  
+/* Each day set is now treated as a card */
