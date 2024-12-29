@@ -15,10 +15,9 @@ const userenquiry = asyncHandler(async (req, res) => {
   }
 
   // Find or create user
-  let user = await User.findOne({ where: { email } });
-  if (!user) {
-    user = await User.create({ fullname:Name, phoneNo:Phone_no, email, city });
-  }
+  
+  const user = await User.create({ fullname:Name, phoneNo:Phone_no, email, city });
+  
 
   // Send email to the user
 
