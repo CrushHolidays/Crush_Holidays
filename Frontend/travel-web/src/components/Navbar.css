@@ -15,8 +15,8 @@
 }  
   
 .logo img {
-  height: 200px;/* Set a fixed height for the logo */
-  width: 800px;
+  height: 60px;/* Set a fixed height for the logo */
+  width: 200px;
   transition: transform 0.3s ease; /* Optional: for a hover effect */
 }
   
