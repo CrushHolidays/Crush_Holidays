@@ -1,5 +1,4 @@
 /* Overall layout of the form container */
-/* Overall layout of the form container */
 .review-form {
   display: flex;
   justify-content: space-between;
@@ -7,42 +6,39 @@
   padding: 20px;
   margin: 20px auto;
   width: 1100px; /* Increased max width for larger form */
-  /* height: auto;  */
   gap: 50px;
   background-color: #f9f9f9;
   border-radius: 12px;
-  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); */
   transition: all 0.3s ease-in-out;
 }
+
 /* Header Section */
 .header {
-  background-color: white; 
-  padding: 30px; 
-  text-align: center; /* Center-align the text */
-  border-radius: 12px; /* Rounded corners for the header */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
-  margin-bottom: 20px; /* Space below the header */
+  background-color: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 12px;
+  margin-bottom: 20px;
 }
 
 /* Header Text Styling */
 .header h1 {
-  font-size: 3rem; /* Large font size */
-  color:  #e1800a; /* White color for the text */
-  font-weight: 700; /* Bold text */
-  text-transform: uppercase; /* Uppercase letters for a more impactful look */
-  letter-spacing: 1.5px; /* Slight spacing between letters */
-  margin: 0; /* Remove default margin */
-  transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+  font-size: 3rem;
+  color: #e1800a;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0;
+  transition: color 0.3s ease-in-out;
 }
 
 .header h1:hover {
-  color: #dd871e; /* Change color to a warm yellow/orange on hover */
+  color: #dd871e;
 }
 
 /* Left section of the form (with text content) */
 .review-form .form-content {
-  width: 45%; /* Increased width for the form content */
-  margin: 0;
+  width: 45%;
   padding: 20px;
   background-image: linear-gradient(135deg, rgb(243, 245, 247), #73bcea, #d4b383, #dd871e);
   border-radius: 10px;
@@ -51,7 +47,7 @@
 
 /* Form title */
 .review-form h2 {
-  font-size: 1.5rem; /* Reduced font size */
+  font-size: 1.5rem;
   color: #333;
   margin-bottom: 15px;
   font-weight: 700;
@@ -93,7 +89,7 @@
 
 /* Textarea adjustments */
 textarea {
-  height: 100px; /* Fixed height */
+  height: 100px;
   resize: vertical;
 }
 
@@ -101,7 +97,7 @@ textarea {
 .star-rating {
   display: flex;
   gap: 5px;
-  font-size: 1.3rem; /* Adjusted size for compactness */
+  font-size: 1.3rem;
   cursor: pointer;
   color: #FFD700;
 }
@@ -179,8 +175,8 @@ button:disabled {
 }
 
 .review-form .image-section img {
-  width: 600px; /* Ensure the images take up the full width */
-  height: 290px; /* Fixed height for images */
+  width: 600px;
+  height: 290px;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   object-fit: cover;
@@ -192,31 +188,60 @@ button:disabled {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive design */
+/* Responsive design for Mobile */
 @media (max-width: 768px) {
   .review-form {
     flex-direction: column;
     align-items: center;
     padding: 15px;
     gap: 15px;
+    width: 100%; /* Full width on mobile screens */
   }
 
   .review-form .form-content,
   .review-form .image-section {
-    width: 100%;
+    width: 100%; /* Full width for both form content and image section */
   }
 
   .review-form h2 {
-    font-size: 1.3rem;
+    font-size: 1.3rem; /* Adjusted font size for smaller screens */
   }
 
   .review-form input,
   .review-form textarea,
   .review-form button {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Adjust font size */
   }
 
   .review-form .image-section img {
     max-height: 250px; /* Adjusted size for smaller screens */
+    width: 100%; /* Ensure image fits properly */
+  }
+}
+
+/* Very Small Screens (Mobile Phones) */
+@media (max-width: 480px) {
+  .review-form {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .review-form .form-content,
+  .review-form .image-section {
+    width: 100%; /* Full width for both form content and image section */
+  }
+
+  .review-form h2 {
+    font-size: 1.1rem; /* Further reduced font size for very small screens */
+  }
+
+  .review-form input,
+  .review-form textarea,
+  .review-form button {
+    font-size: 0.8rem; /* Even smaller font for compact devices */
+  }
+
+  .review-form .image-section img {
+    max-height: 200px; /* Smaller image size */
   }
 }

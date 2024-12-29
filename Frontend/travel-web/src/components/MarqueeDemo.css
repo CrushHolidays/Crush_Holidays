@@ -5,15 +5,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%; /* Ensure full width */
+  width: 100%;
   height: 500px;
   overflow: hidden;
-  background: linear-gradient(135deg, #a8c0ff, #3f2b96); /* Beautiful gradient background */
-  /* border-radius: 20px; */
+  background: linear-gradient(135deg, #a8c0ff, #3f2b96);
   padding: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for more depth */
-  background-size: 400% 400%; /* Animated gradient */
-  animation: gradientBG 15s ease infinite; /* Animate the background gradient */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
 }
 
 /* Title for the review section */
@@ -22,119 +21,116 @@
   font-weight: bold;
   text-align: center;
   margin-bottom: 3rem;
-  color: #ffffff; /* White title text */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for text */
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Marquee effect (scrolling reviews) */
 .marquee {
   display: flex;
   gap: 20px;
-  animation: scroll-left 5s linear infinite; /* Continuous scrolling */
-  white-space: nowrap; /* Prevent wrapping of items */
-  width: 100%; /* Ensure full width of the marquee */
+  animation: scroll-left 5s linear infinite;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .marquee.reverse {
-  animation: scroll-right 5s linear infinite; /* Continuous scrolling */
-  white-space: nowrap; /* Prevent wrapping of items */
-  width: 100%; /* Ensure full width of the marquee */
+  animation: scroll-right 5s linear infinite;
 }
 
 @keyframes scroll-left {
   from {
-    transform: translateX(100%); /* Start from the right */
+    transform: translateX(100%);
   }
   to {
-    transform: translateX(-100%); /* End at the left */
+    transform: translateX(-100%);
   }
 }
 
 @keyframes scroll-right {
   from {
-    transform: translateX(-100%); /* Start from the left */
+    transform: translateX(-100%);
   }
   to {
-    transform: translateX(100%); /* End at the right */
+    transform: translateX(100%);
   }
 }
 
-/* Styling for each review card */
+/* Review card styling */
 .review-card {
-  width: 280px; /* Adjusted card width to fit better */
-  height: 350px; /* Increased card height */
+  width: 280px;
+  height: 350px;
   padding: 20px;
   border: 1px solid #e2e8f0;
   border-radius: 15px;
-  background-color: #ffffff; /* White background for cards */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   display: flex;
-  flex-direction: column;  /* Ensure vertical layout */
-  justify-content: flex-start; /* Start aligning content from top */
-  overflow: visible; /* Allow content to overflow within the card */
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: visible;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect on review cards */
 .review-card:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Header for the review card (Avatar and name) */
+/* Header for review card */
 .review-header {
   display: flex;
   align-items: center;
-  flex-shrink: 0; /* Prevents header from shrinking */
-  margin-bottom: 10px; /* Adds spacing between header and content */
+  flex-shrink: 0;
+  margin-bottom: 10px;
 }
 
 .review-avatar {
-  width: 60px; /* Increased avatar size */
-  height: 60px; /* Increased avatar size */
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   margin-right: 15px;
   object-fit: cover;
-  border: 2px solid #f0f3fa; /* Subtle border around avatar */
+  border: 2px solid #f0f3fa;
 }
 
 .review-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 230px; /* Adjusted width to fit better */
-  flex-grow: 1; /* Allow the info section to grow and take available space */
-  margin-bottom: 10px; /* Adds spacing between info and review body */
+  width: 230px;
+  flex-grow: 1;
+  margin-bottom: 10px;
 }
 
 .review-name {
-  font-size: 18px; /* Increased font size */
+  font-size: 18px;
   font-weight: bold;
-  color: #2d3748; /* Dark color for the name */
+  color: #2d3748;
 }
 
 .review-title {
-  font-size: 16px; /* Adjusted font size to make it fit */
+  font-size: 16px;
   font-weight: 500;
-  color: #4a5568; /* Medium color for the title */
+  color: #4a5568;
   margin-top: 5px;
-  word-wrap: break-word; /* Allow title to break into multiple lines if it overflows */
-  overflow: hidden; /* Hide overflowing content */
-  white-space: normal; /* Allow text to wrap within the card */
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: normal;
 }
 
-/* Body of the review card */
+/* Body of review card */
 .review-body {
-  font-size: 15px; /* Increased body text size */
+  font-size: 15px;
   margin-top: 15px;
   color: #4a5568;
-  flex-grow: 1; /* Ensure that body text takes up remaining space */
-  overflow: visible; /* Allow content to overflow */
-  text-overflow: unset; /* Remove the ellipsis */
-  white-space: normal; /* Allow text to wrap within the card */
+  flex-grow: 1;
+  overflow: visible;
+  white-space: normal;
 }
 
-/* Rating stars section */
+/* Rating section */
 .review-rating {
   display: flex;
   gap: 5px;
@@ -142,15 +138,15 @@
 }
 
 .review-rating svg {
-  color: #fbbf24; /* Gold color for stars */
+  color: #fbbf24;
 }
 
-/* Icon in the top right corner of the card */
+/* Icon in the top-right corner of the review card */
 .review-card-icon {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #ffffff; /* White background for icon */
+  background-color: #ffffff;
   border-radius: 50%;
   padding: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -158,8 +154,8 @@
 }
 
 .review-card-icon:hover {
-  background-color: #f6ad55; /* Hover background color */
-  transform: scale(1.1); /* Slightly scale the icon on hover */
+  background-color: #f6ad55;
+  transform: scale(1.1);
 }
 
 /* Animated gradient for the container */
@@ -175,14 +171,13 @@
   }
 }
 
-/* Marquee gradient effects on left and right */
+/* Marquee gradient effects */
 .marquee-gradient {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 20%;
   pointer-events: none;
-  /* background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)); */
 }
 
 .marquee-gradient.left {
@@ -194,4 +189,65 @@
   transform: rotateY(180deg);
 }
 
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .marquee-container {
+    height: 400px; /* Adjust height on smaller screens */
+    padding: 15px;
+  }
 
+  .reviews-section-title {
+    font-size: 2rem; /* Smaller title font */
+    margin-bottom: 2rem;
+  }
+
+  .review-card {
+    width: 90%; /* Make review cards fit better on small screens */
+    height: auto; /* Adjust height to fit content */
+    margin: 10px 0; /* Add spacing between cards */
+  }
+
+  .review-name {
+    font-size: 16px; /* Reduce font size for mobile */
+  }
+
+  .review-title {
+    font-size: 14px; /* Reduce font size for mobile */
+  }
+
+  .review-body {
+    font-size: 14px; /* Adjust body text for mobile */
+  }
+
+  .review-rating svg {
+    width: 18px; /* Reduce size of rating stars */
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-section-title {
+    font-size: 1.5rem; /* Even smaller font size for mobile phones */
+    margin-bottom: 1.5rem;
+  }
+
+  .review-card {
+    width: 100%; /* Make review card full width on very small screens */
+    height: auto;
+  }
+
+  .review-name {
+    font-size: 14px;
+  }
+
+  .review-title {
+    font-size: 12px;
+  }
+
+  .review-body {
+    font-size: 13px;
+  }
+
+  .review-rating svg {
+    width: 16px; /* Smaller stars on smaller screens */
+  }
+}
