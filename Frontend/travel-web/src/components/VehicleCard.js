@@ -3,6 +3,7 @@ import vehicle1 from '../assets/images/vehicle1.jpg'; // Adjust path based on yo
 import vehicle2 from '../assets/images/vehicle2.jpg';
 import vehicle3 from '../assets/images/vehicle3.jpg';
 import bus from '../assets/images/bus.jpg';
+import vehicle4 from '../assets/images/vehicle4.jpg';
 import './VehicleCard.css';
 
 function VehicleCard() {
@@ -13,6 +14,12 @@ function VehicleCard() {
     window.open(whatsappURL, '_blank');
 };
   const vehicles = [
+    {
+      image: vehicle4,
+      title: '50-seater',
+      description: 'Stylish and eco-friendly, the future of sustainable urban commuting.',
+      price: 'Available with hybrid options.',
+    },
     {
       image: vehicle1,
       title: 'Mini Bus',
@@ -30,12 +37,6 @@ function VehicleCard() {
       title: '7 Seater Car',
       description: ' Versatile and powerful, perfect for family trips and adventures.',
       price: 'Diesel/Petrol available',
-    },
-    {
-      image: bus,
-      title: 'Bus',
-      description: 'Stylish and eco-friendly, the future of sustainable urban commuting.',
-      price: 'Available with hybrid options.',
     },
   ];
 

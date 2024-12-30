@@ -1,8 +1,7 @@
 import React from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { Link, Element } from "react-scroll";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";import { Link, Element } from "react-scroll";
 
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -13,6 +12,7 @@ import ReviewForm from "./components/ReviewForm";
 import CardPage from "./components/HomePage";
 import PopularCards from "./components/PopularCards";
 import VehicleCard from "./components/VehicleCard";
+// import AboutUs from "./components/AboutUs";
 // import Navbar from "./components/Navbar";
 
 function App() {
@@ -31,6 +31,9 @@ function App() {
                 <Element name="about">
                   <About />
                 </Element>
+                {/* <Element name="AboutUs">
+                  <AboutUs />
+                </Element> */}
                 <Element name="packages">
                   <CardPage />
                 </Element>

@@ -53,7 +53,7 @@
 }
 
 .footer-column h3 {
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.25rem; /* 18px */
   margin-bottom: 0.625rem; /* 10px */
 }
 
@@ -61,7 +61,7 @@
 .footer-column a {
   font-size: 0.875rem; /* 14px */
   color: #ccc;
-  line-height: 1.8;
+  line-height: 2;
   text-decoration: none;
 }
 
