@@ -2,7 +2,7 @@ import React from 'react';
 import vehicle1 from '../assets/images/vehicle1.jpg'; // Adjust path based on your directory structure
 import vehicle2 from '../assets/images/vehicle2.jpg';
 import vehicle3 from '../assets/images/vehicle3.jpg';
-
+import bus from '../assets/images/bus.jpg';
 import './VehicleCard.css';
 
 function VehicleCard() {
@@ -21,19 +21,19 @@ function VehicleCard() {
     },
     {
       image: vehicle3,
-      title: 'Toyota Etios (Sedan)',
+      title: '4 Seater Car',
       description: 'Sleek and efficient, ideal for personal or small family use..',
       price: 'Available with low-emission engines',
     },
     {
       image:  vehicle2,
-      title: 'Toyota Innova Crysta (SUV):',
+      title: '7 Seater Car',
       description: ' Versatile and powerful, perfect for family trips and adventures.',
       price: 'Diesel/Petrol available',
     },
     {
-      image: 'https://vehiclecare.in/blaze/wp-content/uploads/2023/10/Tata-nexon.jpg',
-      title: 'Tata Nexon EV (Electric SUV):',
+      image: bus,
+      title: 'Bus',
       description: 'Stylish and eco-friendly, the future of sustainable urban commuting.',
       price: 'Available with hybrid options.',
     },
