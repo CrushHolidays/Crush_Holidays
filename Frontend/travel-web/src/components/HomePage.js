@@ -27,7 +27,6 @@ const CardPage = () => {
       window.open(whatsappURL, '_blank');
   };
   
-  
    return (  
       <div className='destination-page'>  
         <h1 className="home-page-title">OUR PACKAGES</h1>  
@@ -44,7 +43,7 @@ const CardPage = () => {
                       alt={pkg.Package_name}  
                       className="card-image"  
                    />  
-                   <span className="price-badge">₹{pkg.Price-pkg.Discount}</span>  
+                   <span className="price-badge">₹{pkg.Price - pkg.Discount}</span>  
                 </div>  
                 <div className="card-content">  
                    <h3>{pkg.Package_name.replace(/\"/g, "")}</h3>  
@@ -52,19 +51,22 @@ const CardPage = () => {
                       <span className="adventure-cost">  
                         Adventure Cost: <span className="original-price">₹{pkg.Price}</span>  
                       </span>  
-                      <span className="discount-price">Discount: ₹{pkg.Price-pkg.Discount}</span>  
+                      <span className="discount-price">Discount: ₹{pkg.Price - pkg.Discount}</span>  
                    </div>  
                    <p className="packages">Duration: {pkg.Duration} days</p>  
                    <p className="highlights">Highlight: {pkg.Highlight.replace(/\"/g, "")}</p>  
-                   <button  
-  className="whatsapp-button"  
-  onClick={() => handleWhatsAppClick('+919611001991', `Hello, I am interested in this: ${pkg.Package_name}`)} // Pass the custom message with package name
->
-  Contact on WhatsApp
-  
-</button>
-
                 </div>  
+                <div className="button-container">
+                   <button  
+                      className="whatsapp-button"  
+                      onClick={(e) => {
+                         e.stopPropagation();
+                         handleWhatsAppClick('+919611001991', `Hello, I am interested in this: ${pkg.Package_name}`);
+                      }}  
+                   >
+                      Contact on WhatsApp
+                   </button>
+                </div>
               </div>  
            ))}  
         </div>  

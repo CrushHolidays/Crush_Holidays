@@ -13,6 +13,7 @@ import ReviewForm from "./components/ReviewForm";
 import CardPage from "./components/HomePage";
 import PopularCards from "./components/PopularCards";
 import VehicleCard from "./components/VehicleCard";
+// import AboutUs from "./components/AboutUs";
 // import Navbar from "./components/Navbar";
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
                 <Element name="about">
                   <About />
                 </Element>
+                {/* <Element name="AboutUs">
+                  <AboutUs />
+                </Element> */}
                 <Element name="packages">
                   <CardPage />
                 </Element>

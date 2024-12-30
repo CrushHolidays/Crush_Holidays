@@ -88,6 +88,29 @@ body {
 .image-section img:hover {
   transform: scale(1.05);
 }
+.black-coloured{
+  /* background-color: #161515; */
+  color: #161515;
+
+}
+/* Responsive Design for About Us Section */
+@media (max-width: 48rem) { /* max-width: 768px */
+  .about-us-content {
+    max-width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .about-us-title {
+    font-size: 1.8rem;
+  }
+
+  .about-us-description {
+    font-size: 1rem;
+  }
+}
+
+
 
 /* Responsive Design for Mobile */
 @media (max-width: 48rem) { /* max-width: 768px */
