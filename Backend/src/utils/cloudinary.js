@@ -21,7 +21,10 @@
 //     }
 // };
 
-import { v2 as cloudinary } from 'cloudinary';
+// import { v2 as cloudinary } from 'cloudinary';
+import cloudinary from 'cloudinary';
+const { v2: cloudinaryInstance } = cloudinary;
+
 import multer from 'multer';
 
 // Cloudinary configuration
