@@ -163,53 +163,64 @@ body {
 
 /* Each day set is now treated as a card */
 /* General Button Styling */
-.whatsapp-button2 {
-  background-color: #25d366;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
-}
-
-.whatsapp-button:hover {
-  background-color: #1eb656;
-}
-
-/* Customize Plan Section */
+/* Customize Plan Text */
 .customize-plan {
-  margin-top: 15px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
+  text-align: center;
+  font-size: 1rem; /* Adjusted font size */
+  font-family: 'Arial', sans-serif;
+  color: #555;
+  margin-bottom: 1rem;
 }
 
 .customize-plan span {
-  color: #555;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #e9431e; /* Highlighted color */
+}
+
+/* WhatsApp Button */
+.whatsapp-button2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Space between icon and text */
+  background-color: #25d366; /* WhatsApp green */
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px; /* Rounded button */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.whatsapp-button2:hover {
+  background-color: #1db954; /* Slightly darker green on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect */
 }
 
 .whatsapp-link {
-  text-decoration: none;
-  color: #25d366;
-  font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 5px;
-  transition: color 0.3s ease;
+  gap: 0.5rem; /* Space between icon and text */
+  color: inherit;
+  text-decoration: none;
 }
 
 .whatsapp-link:hover {
-  color: #1eb656;
+  color: #fff;
 }
 
-/* WhatsApp Icon Styling */
 .whatsapp-icon {
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  vertical-align: middle;
+  width: 24px; /* Icon size */
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-link:hover .whatsapp-icon {
+  transform: scale(1.1); /* Slight zoom on hover */
 }

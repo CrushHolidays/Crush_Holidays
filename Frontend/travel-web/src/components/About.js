@@ -9,6 +9,12 @@ function About() {
             <h1>ಕರ್ನಾಟಕ ಒಂದು ರಾಜ್ಯ ಹಲವು ಜಗತ್ತು
             </h1>
             <p>ಸಾವಿರ ಮೈಲುಗಳ ಪ್ರಯಾಣವು ಒಂದೇ ಹೆಜ್ಜೆಯಿಂದ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ, ನಿಮ್ಮೊಂದಿಗೆ ಪ್ರಪಂಚದ ಹೆಚ್ಚಿನದನ್ನು ಅನ್ವೇಷಿಸಲು ಕಾಯಲು ಸಾಧ್ಯವಿಲ್ಲ!.</p>
+            
+                <p className="black-coloured">
+                    "Join over <strong>10,000 travelers</strong> who trust us for creating <strong>1,500+ seamless journeys</strong> and unforgettable adventures. 
+                    From breathtaking landscapes to curated experiences, we make every moment count!"
+                </p>
+            
             <button className="callback-button">
               <a href="tel:+918762680858" >
               <span role="img" aria-label="phone" href>📞</span> 
@@ -16,6 +22,7 @@ function About() {
               
             </button>
           </div>
+          
           <div className="image-section">
             <img src="https://s7ap1.scene7.com/is/image/incredibleindia/2-vitthala-temple-complex-hampi-karnataka-city-hero?qlt=82&ts=1726761927494" alt="Group jumping at sunset" />
           </div>
