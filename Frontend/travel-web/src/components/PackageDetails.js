@@ -170,7 +170,7 @@ const PackageDetails = () => {
   onClick={() =>
     handleWhatsAppClick(
       '+919611001991',
-      `Hello, I am interested in this: ${packageDetails.Package_name}`
+      `Hello, I am interested in this: ${packageDetails.packageName}`
     )
   }
 >

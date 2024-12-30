@@ -1,6 +1,6 @@
 import React from 'react';
 import './Contact.css';
-import { FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaInstagram} from 'react-icons/fa';
 
 const Contact = () => {
   return (
@@ -37,16 +37,11 @@ const Contact = () => {
             >
               <FaInstagram size={30} />
             </a>
+            
+              
+            
             <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-icon"
-            >
-              <FaLinkedin size={30} />
-            </a>
-            <a
-            href="https://www.google.com/maps?q=85/4+Excel+Public+School+Rd,+Koorgally,+Mysuru,+Karnataka+570018"
+            href="https://www.google.com/maps?q=85/Mysuru,+Karnataka+570018"
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -4,7 +4,9 @@ import vehicle2 from '../assets/images/vehicle2.jpg';
 import vehicle3 from '../assets/images/vehicle3.jpg';
 import vehicle4 from '../assets/images/vehicle4.jpg';
 import vehicle5 from '../assets/images/vehicle5.jpg';
-
+import vechile6 from '../assets/images/vechile6.jpg';
+import vechile7 from '../assets/images/vechile7.jpg';
+import vechile8 from '../assets/images/vechile8.jpg';
 import './VehicleCard.css';
 
 function VehicleCard() {
@@ -14,34 +16,51 @@ function VehicleCard() {
     const whatsappURL = `https://wa.me/${sanitizedNumber}?text=${encodedMessage}`;
     window.open(whatsappURL, '_blank');
 };
-  const vehicles = [
-    {
-      image: vehicle4,
-      title: '50-seater',
-      description: ' Dieselavailable, perfect for family trips and adventures.',
-      price: '50-55 Rs/km',
-    },
-    {
-      image: vehicle1,
-      title: 'Tempo Travels (TT)',
-      description: 'Diesel/Petrol available, Ideal for corporate or Frined trip.',
-      price: ' 28-30 Rs/Km.',
-    },
-    {
-      image: vehicle3,
-      title: '4-seater',
-      description: 'Available with low-emission engines, ideal for personal or small family use..',
-      price: ' 12 Rs/km',
-    },
-    {
-      image:  vehicle2,
-      title: ' 7-seater (SUV):',
-      description: ' Diesel/Petrol available, perfect for family trips and adventures.',
-      price: '16-18 Rs/km',
-    },
-   
-   
-  ];
+const vehicles = [
+  {
+    image: vehicle3,
+    title: '4-seater',
+    description: 'Available with low-emission engines, ideal for personal or small family use, offering a comfortable and eco-friendly ride.',
+    price: '12 Rs/km',
+  },
+  {
+    image: vehicle2,
+    title: '7-seater (SUV)',
+    description: 'Diesel/Petrol available, a spacious and versatile choice for family trips and outdoor adventures.',
+    price: '16-18 Rs/km',
+  },
+  {
+    image: vehicle1,
+    title: 'Tempo Travels (TT)',
+    description: 'Diesel/Petrol available, perfect for corporate travel or group trips, offering comfort and convenience.',
+    price: '18-20 Rs/km',
+  },
+  {
+    image: vechile7,
+    title: '21-seater',
+    description: 'Diesel available, designed for medium-sized groups, ideal for longer trips with comfort and reliability.',
+    price: '28-30 Rs/km',
+  },
+  {
+    image: vechile8,
+    title: '33-seater',
+    description: 'Diesel available, perfect for larger group travel, offering ample space for comfort during long journeys.',
+    price: '38-40 Rs/km',
+  },
+  {
+    image: vechile6,
+    title: '40-seater',
+    description: 'Diesel available, ideal for large groups, providing efficient and comfortable travel for corporate events or big family outings.',
+    price: '45-50 Rs/km',
+  },
+  {
+    image: vehicle4,
+    title: '50-seater',
+    description: 'Diesel available, the ultimate choice for large group travel, ensuring a smooth and enjoyable experience for any occasion.',
+    price: '50-55 Rs/km',
+  }
+];
+
 
   return (
     <div className="vehicle-card-container">
@@ -62,7 +81,7 @@ function VehicleCard() {
           <div className="vehicle-content">
             <h3 className="vehicle-title">{vehicle.title}</h3>
             <p className="vehicle-description">{vehicle.description}</p>
-            <p className="vehicle-price">{vehicle.price}</p>
+            <p className="vehicle-price"><b>{vehicle.price}</b></p>
           </div>
           
           {/* Buttons */}
