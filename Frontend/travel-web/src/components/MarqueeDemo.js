@@ -38,9 +38,9 @@ export function MarqueeDemo() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+   // fetch("http://localhost:7000/api/v1/Feedback")
   useEffect(() => {
-    fetch("http://localhost:7000/api/v1/Feedback")
+    fetch("https://crush-holidays-backend.onrender.com/api/v1/Feedback")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch feedback details");
