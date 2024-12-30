@@ -3,6 +3,7 @@ import vehicle1 from '../assets/images/vehicle1.jpg'; // Adjust path based on yo
 import vehicle2 from '../assets/images/vehicle2.jpg';
 import vehicle3 from '../assets/images/vehicle3.jpg';
 import vehicle4 from '../assets/images/vehicle4.jpg';
+import vehicle5 from '../assets/images/vehicle5.jpg';
 
 import './VehicleCard.css';
 
@@ -17,27 +18,28 @@ function VehicleCard() {
     {
       image: vehicle4,
       title: '50-seater',
-      description: 'Stylish and eco-friendly, the future of sustainable urban commuting.',
-      price: 'Available with hybrid options.',
+      description: ' Dieselavailable, perfect for family trips and adventures.',
+      price: '50-55 Rs/km',
     },
     {
       image: vehicle1,
-      title: 'Mini Bus',
-      description: 'Spacious and comfortable, perfect for group travel and long-distance journeys.',
-      price: 'Diesel/Petrol available'
+      title: 'Tempo Travels (TT)',
+      description: 'Diesel/Petrol available, Ideal for corporate or Frined trip.',
+      price: ' 28-30 Rs/Km.',
     },
     {
       image: vehicle3,
       title: '4-seater',
-      description: 'Sleek and efficient, ideal for personal or small family use..',
-      price: 'Available with low-emission engines',
+      description: 'Available with low-emission engines, ideal for personal or small family use..',
+      price: ' 12 Rs/km',
     },
     {
       image:  vehicle2,
       title: ' 7-seater (SUV):',
-      description: ' Versatile and powerful, perfect for family trips and adventures.',
-      price: 'Diesel/Petrol available',
+      description: ' Diesel/Petrol available, perfect for family trips and adventures.',
+      price: '16-18 Rs/km',
     },
+   
    
   ];
 
