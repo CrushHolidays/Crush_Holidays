@@ -24,7 +24,7 @@ const ReviewForm = () => {
     setError('');  // Clear any previous errors
 
     try {
-      const response = await axios.post('http://localhost:7000/api/v1/Feedback/new', {
+      const response = await axios.post('https://crush-holidays-backend.onrender.com/api/v1/Feedback/new', {
         rating,
         Title: reviewTitle,
         content: reviewBody,

@@ -43,16 +43,16 @@ const CardPage = () => {
                       alt={pkg.Package_name}  
                       className="card-image"  
                    />  
-                   <span className="price-badge">₹{pkg.Price - pkg.Discount}</span>  
+                   {/* <span className="price-badge">₹{pkg.Price - pkg.Discount}</span>   */}
                 </div>  
                 <div className="card-content">  
                    <h3>{pkg.Package_name.replace(/\"/g, "")}</h3>  
-                   <div className="price">  
+                   {/* <div className="price">  
                       <span className="adventure-cost">  
                         Adventure Cost: <span className="original-price">₹{pkg.Price}</span>  
                       </span>  
                       <span className="discount-price">Discount: ₹{pkg.Price - pkg.Discount}</span>  
-                   </div>  
+                   </div>   */}
                    <p className="packages">Duration: {pkg.Duration} days</p>  
                    <p className="highlights">Highlight: {pkg.Highlight.replace(/\"/g, "")}</p>  
                 </div>  

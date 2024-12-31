@@ -16,7 +16,7 @@ const PackageDetails = () => {
         
         window.open(whatsappURL, '_blank');
     };
-      // fetch(`http://localhost:7000/api/v1/Iternaries/get/${id}`)
+      // fetch(`http://localhost:7000/api/v1/Iternaries/get/${id}`)https://crush-holidays-backend.onrender.com
     useEffect(() => {
         fetch(`https://crush-holidays-backend.onrender.com/api/v1/Iternaries/get/${id}`)
             .then((response) => {
@@ -75,18 +75,18 @@ const PackageDetails = () => {
                 <div className="package-content">
                     <h2 className="section-title">Package Overview</h2>
                     <div className="package-info">
-                        <p className="package-price">
+                        {/* <p className="package-price">
                             Price:<span className="price-text"> ₹{packageDetails.price || "N/A"}</span>
-                        </p>
+                        </p> */}
                         <p className="package-duration">
                             Duration:<span>{packageDetails.duration || "N/A"} days</span>
                         </p>
                         <p className="package-highlights">
                             Highlights:<span>{packageDetails.highlight || "N/A"}</span>
                         </p>
-                        <p className="package-discount">
+                        {/* <p className="package-discount">
                             Discount:<span className="discount-text"> ₹{packageDetails.discount || "N/A"}</span>
-                        </p>
+                        </p> */}
                     </div>
                     <div className="itinerary-grid">
     {packageDetails.itinerary &&
