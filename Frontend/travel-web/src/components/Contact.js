@@ -21,7 +21,8 @@ const Contact = () => {
           <p>
             <a href="mailto:crushholidays09@gmail.com">crushholidays09@gmail.com</a>
           </p>
-          <p>9611001991</p>
+          <p>9611001991/8147169252</p>
+         
           <p>Built By : Team Alpha</p>
           
         </div>
@@ -41,10 +42,10 @@ const Contact = () => {
               
             
             <a
-            href="https://www.google.com/maps?q=85/Mysuru,+Karnataka+570018"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  href="https://www.google.com/maps?q=85/85/4,Excel+Public+School+Rd,Koorgally,Mysuru,Karnataka,570018"
+  target="_blank"
+  rel="noopener noreferrer"
+>
             SEE ON MAP ↗
           </a>
           </div>

@@ -13,10 +13,11 @@ const PopularCards = () => {
         image: 'https://mediaim.expedia.com/destination/2/c2227fccaa5d9c368c44ef73d8a207cd.jpg',
     },
     {
-        title: 'SAKLESHPUR',
-        description: 'Sakleshpur, nestled in Karnataka’s Western Ghats, is a scenic hill station that draws nature lovers and adventurers alike. Surrounded by lush coffee plantations, misty hills, and cascading waterfalls, Sakleshpur offers a serene escape into nature. The region’s spice estates fill the air with a soothing aroma, creating an inviting ambiance. Its tranquil charm, combined with thrilling trekking trails and historical landmarks, makes Sakleshpur a hidden gem for travelers seeking peace and adventure.',
-        image: 'https://www.trawell.in/admin/images/upload/343093893Sakleshpur_Bisle_Ghat.jpg',
-    },
+      title: 'COORG',
+      description: 'Coorg, also known as Kodagu, is a picturesque hill station located in Karnataka, renowned for its lush coffee plantations, sprawling hills, and tranquil ambiance. The mist-covered mountains, cascading waterfalls, and vibrant green landscapes make it a haven for nature enthusiasts and adventure seekers alike. Coorg is also home to ancient temples, vibrant wildlife, and rich cultural traditions, offering visitors a perfect blend of natural beauty and heritage. Whether it’s trekking, coffee tours',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQDzn7JZ3PrLD50TRloq2jee6wFvyRvM6d0g&s'
+  }
+  ,
     {
         title: 'WAYANAD',
         description: "Wayanad, located in Kerala, is a captivating hill station known for its lush greenery, pristine waterfalls, and rich cultural heritage. The region is home to sprawling spice plantations, ancient caves, and scenic trekking trails that attract adventure seekers and nature enthusiasts. Wayanad’s wildlife sanctuaries, serene lakes, and vibrant traditions make it a unique blend of natural beauty and cultural charm. It’s an ideal destination for those looking to immerse themselves in Kerala’s tranquil and vibrant landscape.",

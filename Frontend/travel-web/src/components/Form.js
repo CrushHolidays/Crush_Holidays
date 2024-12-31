@@ -45,7 +45,7 @@ function Form() {
     setLoading(true);  // Set loading state to true while submitting
 
     try {
-      const response = await axios.post('http://localhost:7000/api/v1/user', {
+      const response = await axios.post('https://crush-holidays-backend.onrender.com/api/v1/user', {
         Name: name,
         Phone_no: phone,
         email,

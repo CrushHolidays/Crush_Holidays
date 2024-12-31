@@ -84,7 +84,7 @@ function Navbar() {
               duration={500}  
               offset={-80}  
             >  
-              Popular Cards  
+              Popular Destinations  
             </ScrollLink>  
            </li>  
            <li>  

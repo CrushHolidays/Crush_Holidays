@@ -10,10 +10,10 @@ const Card = ({ image, title, path, price, discount, packages, highlights, ratin
             <img src={image} alt={title} className="card-image"/>
             <div className="card-content">
                 <h3>{title}</h3>
-                <p className="price">
+                {/* <p className="price">
                     <span className="original-price">₹{price}</span>
                     <span className="discount-price">₹{price-discount}</span>
-                </p>
+                </p> */}
                 <p className="packages">Packages: {packages}</p>
                 <ul className="highlights">
                     {highlights.map((highlight, index) => (
