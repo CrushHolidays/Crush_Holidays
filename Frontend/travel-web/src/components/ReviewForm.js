@@ -106,11 +106,12 @@ const ReviewForm = () => {
         />
 
         <label>
-           <input
+          <input
             type="checkbox"
-           checked={checked}
-             onChange={() => setChecked(!checked)}
-          /> 
+            checked={checked}
+            onChange={() => setChecked(!checked)}
+          />
+
           This review is based on my own experience and is my genuine opinion.
         </label>
 
