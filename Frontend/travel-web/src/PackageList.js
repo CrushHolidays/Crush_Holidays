@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-const baseurl = import.meta.env.VITE_BACKEND_URL
+const baseurl =process.env.REACT_APP_API_KEY
 const PackageList = () => {
   const [packages, setPackages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
