@@ -67,7 +67,7 @@ function Navbar() {
               Packages  
             </ScrollLink>  
            </li>  
-           <li>  
+           {/* <li>  
             <ScrollLink  
               to="marquee-demo"  
               smooth={true}  
@@ -76,7 +76,7 @@ function Navbar() {
             >  
               Feedback  
             </ScrollLink>  
-           </li>  
+           </li>   */}
            <li>  
             <ScrollLink  
               to="PopularCards"  
@@ -119,11 +119,11 @@ function Navbar() {
            <li>  
             <RouterLink to="/">Packages</RouterLink>  
            </li>  
-           <li>  
+           {/* <li>  
             <RouterLink to="/">Feedback</RouterLink>  
-           </li>  
+           </li>   */}
            <li>  
-            <RouterLink to="/">Popular Cards</RouterLink>  
+            <RouterLink to="/">Popular Destinations</RouterLink>  
            </li>  
            <li>  
             <RouterLink to="/">Contact</RouterLink>  
