@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './ReviewForm.css';
-
+const baseurl = import.meta.env.VITE_BACKEND_URL
 const ReviewForm = () => {
   const [rating, setRating] = useState(0);
   const [reviewTitle, setReviewTitle] = useState('');
@@ -24,7 +24,7 @@ const ReviewForm = () => {
     setError('');  // Clear any previous errors
 
     try {
-      const response = await axios.post('https://crush-holidays-backend.onrender.com/api/v1/Feedback/new', {
+      const response = await axios.post(`${baseurl}/api/v1/Feedback/new`, {
         rating,
         Title: reviewTitle,
         content: reviewBody,
