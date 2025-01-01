@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';  
 import { useNavigate } from 'react-router-dom';  
 import './HomePage.css';  
-const baseurl = import.meta.env.VITE_BACKEND_URL
+const baseurl =process.env.REACT_APP_API_KEY
 const CardPage = () => {  
    const [packages, setPackages] = useState([]);  
    const navigate = useNavigate();  

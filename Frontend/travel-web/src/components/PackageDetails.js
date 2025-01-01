@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import './PackageDetails.css';
 import Navbar from './Navbar'; // Import Navbar
 import Contact from './Contact';
-const baseurl = import.meta.env.VITE_BACKEND_URL
+const baseurl =process.env.REACT_APP_API_KEY
 const PackageDetails = () => {
     const { id } = useParams();
     const [packageDetails, setPackageDetails] = useState(null);

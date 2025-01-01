@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './ReviewForm.css';
-const baseurl = import.meta.env.VITE_BACKEND_URL
+const baseurl =process.env.REACT_APP_API_KEY
 const ReviewForm = () => {
   const [rating, setRating] = useState(0);
   const [reviewTitle, setReviewTitle] = useState('');

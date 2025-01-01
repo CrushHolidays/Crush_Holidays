@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Form.css';
-const baseurl = import.meta.env.VITE_BACKEND_URL
+const baseurl =process.env.REACT_APP_API_KEY
 function Form() {
   // Define state for each form field
   const [name, setName] = useState('');

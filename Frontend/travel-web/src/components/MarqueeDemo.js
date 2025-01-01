@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa"; // Import React Icons for stars
 import "./MarqueeDemo.css";
 import { IoMdMailUnread } from "react-icons/io";
 import logo from '../../src/assets/images/logo.jpg'
-const baseurl = import.meta.env.VITE_BACKEND_URL
+const baseurl =process.env.REACT_APP_API_KEY
 const ReviewCard = ({ img, name, title, content, rating }) => (
   <figure className="review-card">
     <div className="review-header">

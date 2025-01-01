@@ -3,12 +3,15 @@ import cors from "cors"
 const app=express()
 
 
-app.use(
-    cors({
-        origin:'*',
-        credentials:true
-    })
-)
+app.use(cors({
+    origin: [
+        '*'
+    ],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-CSRF-Token', 'X-Requested-With', 'Accept', 'Accept-Version', 'Content-Length', 'Content-MD5', 'Date', 'X-Api-Version']
+}));
+
 //common middlewares
 
 app.use(express.json())
