@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+const baseurl = import.meta.env.VITE_BACKEND_URL
 const PackageList = () => {
   const [packages, setPackages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:7000/api/v1/Packages/get-packages")
+    fetch(`${baseurl}/api/v1/Packages/get-packages`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch packages");

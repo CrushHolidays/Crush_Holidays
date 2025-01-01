@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';  
 import { useNavigate } from 'react-router-dom';  
 import './HomePage.css';  
-  
+const baseurl = import.meta.env.VITE_BACKEND_URL
 const CardPage = () => {  
    const [packages, setPackages] = useState([]);  
    const navigate = useNavigate();  
    // fetch("http://localhost:7000/api/v1/Packages/get-packages")  
    useEffect(() => {  
-      fetch("https://crush-holidays-backend.onrender.com/api/v1/Packages/get-packages")  
+      fetch(`${baseurl}/api/v1/Packages/get-packages`)  
         .then((response) => response.json())  
         .then((data) => {  
            setPackages(data.data.packages);  

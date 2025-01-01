@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import './PackageDetails.css';
 import Navbar from './Navbar'; // Import Navbar
 import Contact from './Contact';
-
+const baseurl = import.meta.env.VITE_BACKEND_URL
 const PackageDetails = () => {
     const { id } = useParams();
     const [packageDetails, setPackageDetails] = useState(null);
@@ -18,7 +18,7 @@ const PackageDetails = () => {
     };
       // fetch(`http://localhost:7000/api/v1/Iternaries/get/${id}`)https://crush-holidays-backend.onrender.com
     useEffect(() => {
-        fetch(`https://crush-holidays-backend.onrender.com/api/v1/Iternaries/get/${id}`)
+        fetch(`${baseurl}/api/v1/Iternaries/get/${id}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Failed to fetch package details");

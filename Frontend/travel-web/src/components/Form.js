@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Form.css';
-
+const baseurl = import.meta.env.VITE_BACKEND_URL
 function Form() {
   // Define state for each form field
   const [name, setName] = useState('');
@@ -45,7 +45,7 @@ function Form() {
     setLoading(true);  // Set loading state to true while submitting
 
     try {
-      const response = await axios.post('https://crush-holidays-backend.onrender.com/api/v1/user', {
+      const response = await axios.post(`${baseurl}/api/v1/user`, {
         Name: name,
         Phone_no: phone,
         email,

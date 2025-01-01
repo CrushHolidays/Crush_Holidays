@@ -3,6 +3,7 @@ import { FaStar } from "react-icons/fa"; // Import React Icons for stars
 import "./MarqueeDemo.css";
 import { IoMdMailUnread } from "react-icons/io";
 import logo from '../../src/assets/images/logo.jpg'
+const baseurl = import.meta.env.VITE_BACKEND_URL
 const ReviewCard = ({ img, name, title, content, rating }) => (
   <figure className="review-card">
     <div className="review-header">
@@ -40,7 +41,7 @@ export function MarqueeDemo() {
   const [error, setError] = useState(null);
    // fetch("http://localhost:7000/api/v1/Feedback")
   useEffect(() => {
-    fetch("https://crush-holidays-backend.onrender.com/api/v1/Feedback")
+    fetch(`${baseurl}/api/v1/Feedback`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch feedback details");

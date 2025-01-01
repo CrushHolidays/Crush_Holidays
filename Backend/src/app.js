@@ -10,6 +10,7 @@ app.use(
     })
 )
 //common middlewares
+
 app.use(express.json())
 app.use(express.urlencoded({extended:true,limit:"1000kb"}))
 app.use(express.static("public"))
@@ -24,6 +25,7 @@ import PackageRouter from "./routes/Packages.routes.js"
 import InquiryRouter from "./routes/inquiry.routes.js"
 import FeedbackRouter from "./routes/feedback.routes.js"
 import Iternaryroutes from "./routes/iterneraries.routes.js"
+
 app.use("/api/v1/Packages",PackageRouter)
 app.use("/api/v1/healthcheck",healthcheckRouter)
 app.use("/api/v1/user",userRouter)
