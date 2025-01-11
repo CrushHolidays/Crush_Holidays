@@ -40,9 +40,9 @@ function App() {
                 <Element name="VehicleCard">
                   <VehicleCard />
                 </Element>
-                {/* <Element name="marquee-demo">
+                <Element name="marquee-demo">
                   <MarqueeDemo />
-                </Element> */}
+                // </Element>
                 <Element name="feedback-form">
                   <ReviewForm />
                 </Element>
