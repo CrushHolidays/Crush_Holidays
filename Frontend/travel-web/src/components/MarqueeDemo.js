@@ -47,9 +47,9 @@ export function MarqueeDemo() {
         const response = await axios.get(`${baseurl}/api/v1/Feedback/specific`);
         
         if (response.data.success) {
-          console.log("Fetched data:", response.data.data); // Backend response
+          // console.log("Fetched data:", response.data.data); // Backend response
           setReviews(response.data.data);
-          console.log("State after setReviews:", response.data.data); // Verify state
+          // console.log("State after setReviews:", response.data.data); // Verify state
 
  // Access the `data` array from the response
         } else {
@@ -89,7 +89,7 @@ export function MarqueeDemo() {
     
       <div className="marquee" style={{ animationDuration: "20s" }}>
       {reviews.map((review, index) => {
-  console.log(`Rendering review ${index + 1}:`, review);
+  
   return (
     <ReviewCard
       key={review._id || index}

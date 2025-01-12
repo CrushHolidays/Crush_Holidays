@@ -54,7 +54,7 @@ const CardPage = () => {
                       <span className="discount-price">Discount: ₹{pkg.Price - pkg.Discount}</span>  
                    </div>   */}
                    <p className="packages">Duration: {pkg.Duration} days</p>  
-                   <p className="highlights">Highlight: {pkg.Highlight.replace(/\"/g, "")}</p>  
+                   <p className="highlights">Includes: {pkg.Highlight.replace(/\"/g, "")}</p>  
                 </div>  
                 <div className="button-container">
                    <button  

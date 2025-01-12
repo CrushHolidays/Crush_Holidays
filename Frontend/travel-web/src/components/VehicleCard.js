@@ -8,6 +8,7 @@ import vechile6 from '../assets/images/vechile6.jpg';
 import vechile7 from '../assets/images/vechile7.jpg';
 import vechile8 from '../assets/images/vechile8.jpg';
 import vechile9 from '../assets/images/vechile5.png';
+import vechile10 from '../assets/images/vechile10.png';
 import './VehicleCard.css';
 
 function VehicleCard() {
@@ -55,7 +56,7 @@ const vehicles = [
     price: '45-50 Rs/km',
   },
   {
-    image: vehicle4,
+    image:vechile10,
     title: '50-seater',
     description: 'Diesel available, the ultimate choice for large group travel, ensuring a smooth and enjoyable experience for any occasion.',
     price: '50-55 Rs/km',
