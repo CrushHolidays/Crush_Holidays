@@ -26,7 +26,7 @@ const PackageDetails = () => {
                 return response.json();
             })
             .then((data) => {
-                console.log("Fetched data:", data);
+                // console.log("Fetched data:", data);
                 setPackageDetails(data);
                 setLoading(false);
             })
@@ -82,7 +82,7 @@ const PackageDetails = () => {
                             Duration:<span>{packageDetails.duration || "N/A"} days</span>
                         </p>
                         <p className="package-highlights">
-                            Highlights:<span>{packageDetails.highlight || "N/A"}</span>
+                            Includes:<span>{packageDetails.highlight || "N/A"}</span>
                         </p>
                         {/* <p className="package-discount">
                             Discount:<span className="discount-text"> ₹{packageDetails.discount || "N/A"}</span>
