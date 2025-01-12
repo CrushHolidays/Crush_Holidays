@@ -48,7 +48,7 @@ const vehicles = [
     price: '38-40 Rs/km',
   },
   {
-    image: vechile6,
+    image: vehicle5,
     title: '40-seater',
     description: 'Diesel available, ideal for large groups, providing efficient and comfortable travel for corporate events or big family outings.',
     price: '45-50 Rs/km',
