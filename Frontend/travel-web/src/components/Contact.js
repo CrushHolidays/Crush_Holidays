@@ -28,7 +28,6 @@ const Contact = () => {
         </div>
         <div className="footer-column">
           <p>LOVE TO TRAVEL BUT NEED INSPIRATION?</p>
-          <a href="#newsletter">Join UP FOR OUR Holidays ↗</a>
           <div className="social-icons">
             <a
               href="https://www.instagram.com/crush_holidayz_09/?igsh=MXNvYmRpNW9laWgzNQ%3D%3D"
