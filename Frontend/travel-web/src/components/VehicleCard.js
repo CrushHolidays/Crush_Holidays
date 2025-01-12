@@ -7,6 +7,7 @@ import vehicle5 from '../assets/images/vehicle5.jpg';
 import vechile6 from '../assets/images/vechile6.jpg';
 import vechile7 from '../assets/images/vechile7.jpg';
 import vechile8 from '../assets/images/vechile8.jpg';
+import vechile9 from '../assets/images/vechile5.png';
 import './VehicleCard.css';
 
 function VehicleCard() {
@@ -48,7 +49,7 @@ const vehicles = [
     price: '38-40 Rs/km',
   },
   {
-    image: vehicle5,
+    image: vechile9,
     title: '40-seater',
     description: 'Diesel available, ideal for large groups, providing efficient and comfortable travel for corporate events or big family outings.',
     price: '45-50 Rs/km',

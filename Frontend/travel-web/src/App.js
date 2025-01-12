@@ -42,7 +42,7 @@ function App() {
                 </Element>
                 <Element name="marquee-demo">
                   <MarqueeDemo />
-                // </Element>
+                 </Element>
                 <Element name="feedback-form">
                   <ReviewForm />
                 </Element>
