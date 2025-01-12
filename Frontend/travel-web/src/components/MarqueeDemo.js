@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa"; // Import React Icons for stars
 import "./MarqueeDemo.css";
+import axios from "axios";
 import { IoMdMailUnread } from "react-icons/io";
 import logo from '../../src/assets/images/logo.jpg'
 const baseurl =process.env.REACT_APP_API_KEY
@@ -40,27 +41,29 @@ export function MarqueeDemo() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
    // fetch("http://localhost:7000/api/v1/Feedback")
-  useEffect(() => {
-    fetch(`${baseurl}/api/v1/Feedback`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch feedback details");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        if (data.success) {
-          setReviews(data.data); // Access the `data` array from the response
+   useEffect(() => {
+    const fetchFeedback = async () => {
+      try {
+        const response = await axios.get(`${baseurl}/api/v1/Feedback/specific`);
+        
+        if (response.data.success) {
+          console.log("Fetched data:", response.data.data); // Backend response
+          setReviews(response.data.data);
+          console.log("State after setReviews:", response.data.data); // Verify state
+
+ // Access the `data` array from the response
         } else {
-          throw new Error(data.message || "Unexpected response format");
+          throw new Error(response.data.message || "Unexpected response format");
         }
-        setLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         console.error("Error fetching feedback details:", err);
         setError(err.message);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+  
+    fetchFeedback();
   }, []);
 
   if (loading) {
@@ -83,18 +86,21 @@ export function MarqueeDemo() {
     <div className="marquee-container">
       {/* Title for the whole review section */}
       <h2 className="reviews-section-title">What Our Customers Say</h2>
-
+    
       <div className="marquee" style={{ animationDuration: "20s" }}>
-        {reviews.map((review) => (
-          <ReviewCard
-            key={review._id}
-            img={review.img}
-            name={review.name}
-            title={review.Title}
-            content={review.content}
-            rating={review.rating}
-          />
-        ))}
+      {reviews.map((review, index) => {
+  console.log(`Rendering review ${index + 1}:`, review);
+  return (
+    <ReviewCard
+      key={review._id || index}
+      img={review.img}
+      name={review.name}
+      title={review.Title}
+      content={review.content}
+      rating={review.rating}
+    />
+  );
+})}
       </div>
 
       {/* Optionally, add gradient effect on the left and right */}
