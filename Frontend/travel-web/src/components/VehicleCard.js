@@ -2,13 +2,10 @@ import React from 'react';
 import vehicle1 from '../assets/images/vehicle1.jpg'; // Adjust path based on your directory structure
 import vehicle2 from '../assets/images/vehicle2.jpg';
 import vehicle3 from '../assets/images/vehicle3.jpg';
-import vehicle4 from '../assets/images/vehicle4.jpg';
-import vehicle5 from '../assets/images/vehicle5.jpg';
-import vechile6 from '../assets/images/vechile6.jpg';
-import vechile7 from '../assets/images/vechile7.jpg';
 import vechile8 from '../assets/images/vechile8.jpg';
 import vechile9 from '../assets/images/vechile5.png';
 import vechile10 from '../assets/images/vechile10.png';
+import vechile11 from '../assets/images/IMG_4263.jpg';
 import './VehicleCard.css';
 
 function VehicleCard() {
@@ -38,7 +35,7 @@ const vehicles = [
     price: '18-20 Rs/km',
   },
   {
-    image: vechile7,
+    image: vechile9,
     title: '21-seater',
     description: 'Diesel available, designed for medium-sized groups, ideal for longer trips with comfort and reliability.',
     price: '28-30 Rs/km',
@@ -50,7 +47,7 @@ const vehicles = [
     price: '38-40 Rs/km',
   },
   {
-    image: vechile9,
+    image: vechile11,
     title: '40-seater',
     description: 'Diesel available, ideal for large groups, providing efficient and comfortable travel for corporate events or big family outings.',
     price: '45-50 Rs/km',

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";import { Link, Element } from "react-scroll";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";import { Element } from "react-scroll";
 
 // import Navbar from "./components/Navbar";
 import Home from "./components/Home";
